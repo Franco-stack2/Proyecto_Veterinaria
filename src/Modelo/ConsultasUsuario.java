@@ -74,4 +74,45 @@ public class ConsultasUsuario extends Conexion {
             }
         }
     }
+    public boolean iniciarSesion(Usuario usu) {
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+
+    Connection con = getConexion();
+
+    String sql = "SELECT * FROM usuario WHERE email=? AND contrasena=?";
+
+    try {
+        ps = con.prepareStatement(sql);
+
+        ps.setString(1, usu.getEmail());
+        ps.setString(2, usu.getContrasena());
+
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            usu.setNombre(rs.getString("nombre"));
+            usu.setEmail(rs.getString("email"));
+            usu.setNumTelefono(rs.getInt("numTelefono"));
+            usu.setContrasena(rs.getString("contrasena"));
+            usu.setTipoUsuario(rs.getString("TipoUsuario"));
+
+            return true;
+        }
+
+        return false;
+
+    } catch (SQLException e) {
+        System.err.println(e);
+        return false;
+
+    } finally {
+        try {
+            con.close();
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+    }
+    }
+    
 } 
