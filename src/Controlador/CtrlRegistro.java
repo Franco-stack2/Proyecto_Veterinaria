@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
-package Controlador;
 
 import Modelo.ConsultasUsuario;
 import Modelo.Usuario;
