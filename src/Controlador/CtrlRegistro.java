@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
+package Controlador;
 
 import Modelo.ConsultasUsuario;
 import Modelo.Usuario;
@@ -21,12 +22,11 @@ public class CtrlRegistro implements ActionListener {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
-
-        this.vista.btnRegistro.addActionListener(this);
+        this.vista.btnRegistrar.addActionListener(this);
     }
 
     public void iniciar() {
-        vista.setTitle("Registro de Usuario");
+        vista.setTitle("Registro");
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }
@@ -34,27 +34,25 @@ public class CtrlRegistro implements ActionListener {
     public void limpiar() {
         vista.txtNombre.setText("");
         vista.txtEmail.setText("");
-        vista.txtNumTelefono.setText("");
+        vista.txtTelefono.setText("");
         vista.txtContrasena.setText("");
-        vista.cmbTipoUsuario.setSelectedIndex(0);
         vista.txtNombre.requestFocus();
     }
 
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == vista.btnRegistro) {
+        if (e.getSource() == vista.btnRegistrar) {
+
             modelo.setNombre(vista.txtNombre.getText());
             modelo.setEmail(vista.txtEmail.getText());
-            modelo.setNumTelefono(Integer.parseInt(vista.txtNumTelefono.getText()));
+            modelo.setNumTelefono(Integer.parseInt(vista.txtTelefono.getText()));
             modelo.setContrasena(String.valueOf(vista.txtContrasena.getPassword()));
-            modelo.setTipoUsuario(vista.cmbTipoUsuario.getSelectedItem().toString());
 
             if (consultas.registrar(modelo)) {
-                JOptionPane.showMessageDialog(null, "Usuario registrado");
+                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
                 limpiar();
             } else {
-                JOptionPane.showMessageDialog(null, "Error al registrar");
-                limpiar();
+                JOptionPane.showMessageDialog(null, "Error al registrar usuario");
             }
         }
     }
