@@ -10,7 +10,6 @@ package Vista;
  */
 public class FrmInicioSesion extends javax.swing.JFrame {
 
-    public Object btnInicioSesion;
 
     /**
      * Creates new form formularioIniciodesesion
@@ -248,7 +247,9 @@ public class FrmInicioSesion extends javax.swing.JFrame {
             }
         });
     }
-
+public javax.swing.JButton getBtnIniciarSesion() {
+    return btnIniciarSesion;
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton btnRegistrarse;

@@ -21,7 +21,7 @@ public class CtrlInicioSesion implements ActionListener {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
-        this.vista.btnInicioSesion.addActionListener(this);
+        this.vista.getBtnIniciarSesion().addActionListener(this);
     }
 
     public void iniciar() {
@@ -36,16 +36,32 @@ public class CtrlInicioSesion implements ActionListener {
         vista.txtEmail.requestFocus();
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if (e.getSource() == vista.btnInicioSesion) {
+
+        if (e.getSource() == vista.getBtnIniciarSesion()) {
+
             modelo.setEmail(vista.txtEmail.getText());
-            modelo.setContrasena(String.valueOf(vista.txtContrasena.getPassword()));
+            modelo.setContrasena(
+                String.valueOf(vista.txtContrasena.getPassword())
+            );
+
             if (consultas.iniciarSesion(modelo)) {
-                JOptionPane.showMessageDialog(null, "Bienvenido " + modelo.getNombre());
+
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Bienvenido " + modelo.getNombre()
+                );
+
                 limpiar();
+
             } else {
-                JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
+
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Correo o contraseña incorrectos"
+                );
+
                 limpiar();
             }
         }
