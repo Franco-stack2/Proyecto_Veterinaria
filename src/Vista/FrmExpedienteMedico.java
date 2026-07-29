@@ -51,14 +51,29 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
         btnRegistro.setText("Registro");
         btnRegistro.setToolTipText("");
         btnRegistro.setBorder(null);
+        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroActionPerformed(evt);
+            }
+        });
 
         btnExpedienteMedico.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnExpedienteMedico.setText("Expediente Medico");
         btnExpedienteMedico.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnExpedienteMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExpedienteMedicoActionPerformed(evt);
+            }
+        });
 
         btnGenerarReportes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnGenerarReportes.setText("Generar reportes");
         btnGenerarReportes.setBorder(null);
+        btnGenerarReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarReportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,21 +105,55 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel2.setText("Home\\Expediente Medico");
 
+        txtNombreMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreMascotaActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Nombre de la mascota");
 
         jLabel4.setText("Contacto de emergencia");
 
+        txtNumEmergencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumEmergenciaActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Condiciones pasadas");
 
+        txtCondicionesPasadas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCondicionesPasadasActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Alergias");
+
+        txtAlergias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAlergiasActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnAnadir.setBackground(new java.awt.Color(0, 204, 51));
         btnAnadir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAnadir.setText("Añadir");
+        btnAnadir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,6 +215,42 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNombreMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreMascotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreMascotaActionPerformed
+
+    private void txtNumEmergenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumEmergenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumEmergenciaActionPerformed
+
+    private void txtCondicionesPasadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCondicionesPasadasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCondicionesPasadasActionPerformed
+
+    private void txtAlergiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlergiasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAlergiasActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAnadirActionPerformed
+
+    private void btnExpedienteMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedienteMedicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExpedienteMedicoActionPerformed
+
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void btnGenerarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReportesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarReportesActionPerformed
 
     /**
      * @param args the command line arguments

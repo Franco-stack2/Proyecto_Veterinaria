@@ -134,6 +134,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnExpedienteMedico">
           <Properties>
@@ -147,6 +150,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExpedienteMedicoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnGenerarReportes">
           <Properties>
@@ -158,6 +164,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarReportesActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -178,6 +187,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNombreMascota">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreMascotaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -190,6 +202,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNumEmergencia">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumEmergenciaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -197,6 +212,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCondicionesPasadas">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCondicionesPasadasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -204,6 +222,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAlergias">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAlergiasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelar">
       <Properties>
@@ -215,6 +236,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAnadir">
       <Properties>
@@ -226,6 +250,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnadirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
