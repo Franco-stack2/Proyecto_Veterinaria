@@ -13,21 +13,23 @@ public class Usuario {
     private String email;
     private int numTelefono;
     private String contrasena;
-    private String TipoUsuario;
+    private Rol rol;
+    
+    
     
     public Usuario() {
         this.nombre = "";
         this.email = "";
         this.numTelefono = 0;
         this.contrasena = "";
-        this.TipoUsuario = "";
+        Rol rol;
 }
     public Usuario(String nombre, String email, int numTelefono, String contrasena, String TipoUsuario) {
         this.nombre = nombre;
         this.email = email;
         this.numTelefono = numTelefono;
         this.contrasena = contrasena;
-        this.TipoUsuario = TipoUsuario;
+        this.rol = rol;
     }
 
     public String getNombre() {
@@ -62,12 +64,6 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public String getTipoUsuario() {
-        return TipoUsuario;
-    }
 
-    public void setTipoUsuario(String TipoUsuario) {
-        this.TipoUsuario = TipoUsuario;
-    }
     
 }
