@@ -55,9 +55,9 @@ public class ConsultasCita extends Conexion {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                cita.setId_cita(rs.getInt("id_cita"));
+                cita.setId_cita(rs.getInt("id de la cita"));
                 cita.setFecha(rs.getDate("fecha"));
-                cita.setTipoCita(rs.getString("tipoCita"));
+                cita.setTipoCita(rs.getString("tipo de Cita"));
                 
                 return true;
             }
