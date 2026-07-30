@@ -5,8 +5,11 @@
 package proyecto_veterinaria;
 
 /**
- *
- * @author Usuario
+ * Grupo 1 
+Franco Sanchez Mico
+Vanessa Ulloa Martinez
+Kerry Alfaro Brenes
+Jimena Echeverria Sabean
  */
 public class Proyecto_Veterinaria {
 
@@ -15,18 +18,6 @@ public class Proyecto_Veterinaria {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        //pruebaGitHub KerryAlfaro 10/7/2026
-        
-        
-        
-        
-        
-        // hola
-        //Jimeprueba
-        
-    }
-       
+          
     
 }
-
