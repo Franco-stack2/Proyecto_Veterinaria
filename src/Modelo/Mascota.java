@@ -9,7 +9,7 @@ package Modelo;
  * @author Usuario
  */
 public class Mascota {
-        private String nombreMascota;
+    private String nombreMascota;
     private String razaMascota;
     private String vacunas;
     private String servicios;
