@@ -9,6 +9,7 @@ package Modelo;
  * @author alfar
  */
 public class Usuario {
+    private int id_usuario;
     private String nombre;
     private String email;
     private int numTelefono;
@@ -21,13 +22,15 @@ public class Usuario {
         this.numTelefono = 0;
         this.contrasena = "";
         this.TipoUsuario = "";
+        this.id_usuario = 0;
 }
-    public Usuario(String nombre, String email, int numTelefono, String contrasena, String TipoUsuario) {
+    public Usuario(String nombre, String email, int numTelefono, String contrasena, String TipoUsuario,int id_usuario) {
         this.nombre = nombre;
         this.email = email;
         this.numTelefono = numTelefono;
         this.contrasena = contrasena;
         this.TipoUsuario = TipoUsuario;
+        this.id_usuario = id_usuario;
     }
 
     public String getNombre() {
@@ -69,5 +72,15 @@ public class Usuario {
     public void setTipoUsuario(String TipoUsuario) {
         this.TipoUsuario = TipoUsuario;
     }
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+    
+    
     
 }
