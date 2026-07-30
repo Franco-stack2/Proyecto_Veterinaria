@@ -122,7 +122,7 @@ public class AgendarCita extends javax.swing.JFrame {
 
         txtNombreMedico.addActionListener(this::txtNombreMedicoActionPerformed);
 
-        cmbTipoCita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------", " " }));
+        cmbTipoCita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------", "Vacunacion", "Control Medico", "Tratamientos" }));
         cmbTipoCita.addActionListener(this::cmbTipoCitaActionPerformed);
 
         btnCancelar.setBackground(new java.awt.Color(255, 51, 51));
