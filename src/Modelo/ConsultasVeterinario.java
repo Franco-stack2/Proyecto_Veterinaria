@@ -17,7 +17,7 @@ public class ConsultasVeterinario extends Conexion {
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, vet.getId_veterinario());
             ps.setString(2, vet.getEspecialidad());
-            ps.setInt(3, vet.getUsuario().getId_usuario());
+            ps.setInt(3, vet.getId_usuario());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.err.println("Error al registrar veterinario: " + e);
