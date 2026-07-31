@@ -14,11 +14,9 @@ public class ConsultasUsuario extends Conexion {
 
 
     public boolean registrar(Usuario usu) {
-
         String sql = "INSERT INTO usuario "
                 + "(nombre, email, numTelefono, contrasena, TipoUsuario) "
                 + "VALUES (?, ?, ?, ?, ?)";
-
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getEmail());
