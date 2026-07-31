@@ -14,8 +14,7 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean registrar(Usuario usu) {
         String sql = "INSERT INTO usuario (nombre, email, numTelefono, contrasena, TipoUsuario) VALUES (?,?,?,?,?)";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getEmail());
             ps.setInt(3, usu.getNumTelefono());
@@ -30,8 +29,7 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean buscar(Usuario usu) {
         String sql = "SELECT * FROM usuario WHERE email=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getEmail());
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
@@ -52,8 +50,7 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean iniciarSesion(Usuario usu) {
         String sql = "SELECT * FROM usuario WHERE email=? AND contrasena=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getEmail());
             ps.setString(2, usu.getContrasena());
             try (ResultSet rs = ps.executeQuery()) {
@@ -75,8 +72,7 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean modificar(Usuario usu) {
         String sql = "UPDATE usuario SET nombre=?, numTelefono=?, contrasena=?, TipoUsuario=? WHERE email=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
             ps.setInt(2, usu.getNumTelefono());
             ps.setString(3, usu.getContrasena());
@@ -91,8 +87,7 @@ public class ConsultasUsuario extends Conexion {
 
     public boolean eliminar(Usuario usu) {
         String sql = "DELETE FROM usuario WHERE email=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getEmail());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
