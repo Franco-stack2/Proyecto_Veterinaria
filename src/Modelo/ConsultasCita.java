@@ -13,10 +13,9 @@ public class ConsultasCita extends Conexion {
     
     public boolean registrar(Cita cita) {
         String sql = "INSERT INTO cita (id_cita, fecha, tipoCita, emailUsuario, nombreMascota) VALUES (?,?,?,?,?)";
-        try (Connection con = getConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, cita.getId_cita());
-            ps.setDate(2, (java.sql.Date) cita.getFecha());
+            ps.setDate(2, (Date) cita.getFecha());
             ps.setString(3, cita.getTipoCita());
             ps.setString(4, cita.getUsuario().getEmail());
             ps.setString(5, cita.getMascota().getNombreMascota());
@@ -29,8 +28,7 @@ public class ConsultasCita extends Conexion {
 
     public boolean buscar(Cita cita) {
         String sql = "SELECT * FROM cita WHERE id_cita=?";
-        try (Connection con = getConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, cita.getId_cita());
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
@@ -49,8 +47,7 @@ public class ConsultasCita extends Conexion {
 
     public boolean modificar(Cita cita) {
         String sql = "UPDATE cita SET fecha=?, tipoCita=?, emailUsuario=?, nombreMascota=? WHERE id_cita=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setDate(1, (java.sql.Date) cita.getFecha());
             ps.setString(2, cita.getTipoCita());
             ps.setString(3, cita.getUsuario().getEmail());
@@ -65,8 +62,7 @@ public class ConsultasCita extends Conexion {
 
     public boolean eliminar(Cita cita) {
         String sql = "DELETE FROM cita WHERE id_cita=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, cita.getId_cita());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
