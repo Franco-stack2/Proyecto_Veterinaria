@@ -14,8 +14,7 @@ public class ConsultasMascota extends Conexion {
 
     public boolean registrar(Mascota mas) {
         String sql = "INSERT INTO mascota (nombreMascota, razaMascota, vacunas, servicios, medicamentos) VALUES (?,?,?,?,?)";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, mas.getNombreMascota());
             ps.setString(2, mas.getRazaMascota());
             ps.setString(3, mas.getVacunas());
@@ -30,8 +29,7 @@ public class ConsultasMascota extends Conexion {
 
     public boolean buscar(Mascota mas) {
         String sql = "SELECT * FROM mascota WHERE nombreMascota=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, mas.getNombreMascota());
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
@@ -52,8 +50,7 @@ public class ConsultasMascota extends Conexion {
 
     public boolean modificar(Mascota mas) {
         String sql = "UPDATE mascota SET razaMascota=?, vacunas=?, servicios=?, medicamentos=? WHERE nombreMascota=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, mas.getRazaMascota());
             ps.setString(2, mas.getVacunas());
             ps.setString(3, mas.getServicios());
@@ -68,8 +65,7 @@ public class ConsultasMascota extends Conexion {
 
     public boolean eliminar(Mascota mas) {
         String sql = "DELETE FROM mascota WHERE nombreMascota=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, mas.getNombreMascota());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
