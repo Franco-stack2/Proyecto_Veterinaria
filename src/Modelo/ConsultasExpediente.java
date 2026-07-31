@@ -13,8 +13,7 @@ public class ConsultasExpediente extends Conexion {
 
     public boolean registrar(Expediente exp) {
         String sql = "INSERT INTO expediente (idExpediente, nombreMascota, contactoEmergencia, condicionesPasadas, alergias) VALUES (?,?,?,?,?)";
-        try (Connection con = getConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, exp.getIdExpediente());
             ps.setString(2, exp.getNombreMascota());
             ps.setString(3, exp.getContactoEmergencia());
@@ -29,8 +28,7 @@ public class ConsultasExpediente extends Conexion {
 
     public boolean buscar(Expediente exp) {
         String sql = "SELECT * FROM expediente WHERE idExpediente=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, exp.getIdExpediente());
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
@@ -51,8 +49,7 @@ public class ConsultasExpediente extends Conexion {
 
     public boolean modificar(Expediente exp) {
         String sql = "UPDATE expediente SET nombreMascota=?, contactoEmergencia=?, condicionesPasadas=?, alergias=? WHERE idExpediente=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, exp.getNombreMascota());
             ps.setString(2, exp.getContactoEmergencia());
             ps.setString(3, exp.getCondicionesPasadas());
@@ -67,8 +64,7 @@ public class ConsultasExpediente extends Conexion {
 
     public boolean eliminar(Expediente exp) {
         String sql = "DELETE FROM expediente WHERE idExpediente=?";
-        try (Connection con = getConexion();
-            PreparedStatement ps = con.prepareStatement(sql)) {
+        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, exp.getIdExpediente());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
