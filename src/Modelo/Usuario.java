@@ -12,19 +12,19 @@ public class Usuario {
     private int id_usuario;
     private String nombre;
     private String email;
-    private int numTelefono;
+    private String numTelefono;
     private String contrasena;
     private String TipoUsuario;
     
     public Usuario() {
         this.nombre = "";
         this.email = "";
-        this.numTelefono = 0;
+        this.numTelefono = "";
         this.contrasena = "";
         this.TipoUsuario = "";
         this.id_usuario = 0;
 }
-    public Usuario(String nombre, String email, int numTelefono, String contrasena, String TipoUsuario,int id_usuario) {
+    public Usuario(String nombre, String email, String numTelefono, String contrasena, String TipoUsuario,int id_usuario) {
         this.nombre = nombre;
         this.email = email;
         this.numTelefono = numTelefono;
@@ -49,11 +49,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public int getNumTelefono() {
+    public String getNumTelefono() {
         return numTelefono;
     }
 
-    public void setNumTelefono(int numTelefono) {
+    public void setNumTelefono(String numTelefono) {
         this.numTelefono = numTelefono;
     }
 

@@ -17,7 +17,7 @@ public class ConsultasUsuario extends Conexion {
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getEmail());
-            ps.setInt(3, usu.getNumTelefono());
+            ps.setString(3, usu.getNumTelefono());
             ps.setString(4, usu.getContrasena());
             ps.setString(5, usu.getTipoUsuario());
             return ps.executeUpdate() > 0;
@@ -35,7 +35,7 @@ public class ConsultasUsuario extends Conexion {
                 if (rs.next()) {
                     usu.setNombre(rs.getString("nombre"));
                     usu.setEmail(rs.getString("email"));
-                    usu.setNumTelefono(rs.getInt("numTelefono"));
+                    usu.setNumTelefono(rs.getString("numTelefono"));
                     usu.setContrasena(rs.getString("contrasena"));
                     usu.setTipoUsuario(rs.getString("TipoUsuario"));
                     return true;
@@ -57,7 +57,7 @@ public class ConsultasUsuario extends Conexion {
                 if (rs.next()) {
                     usu.setNombre(rs.getString("nombre"));
                     usu.setEmail(rs.getString("email"));
-                    usu.setNumTelefono(rs.getInt("numTelefono"));
+                    usu.setNumTelefono(rs.getString("numTelefono"));
                     usu.setContrasena(rs.getString("contrasena"));
                     usu.setTipoUsuario(rs.getString("TipoUsuario"));
                     return true;
@@ -74,7 +74,7 @@ public class ConsultasUsuario extends Conexion {
         String sql = "UPDATE usuario SET nombre=?, numTelefono=?, contrasena=?, TipoUsuario=? WHERE email=?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
-            ps.setInt(2, usu.getNumTelefono());
+            ps.setString(2, usu.getNumTelefono());
             ps.setString(3, usu.getContrasena());
             ps.setString(4, usu.getTipoUsuario());
             ps.setString(5, usu.getEmail());
