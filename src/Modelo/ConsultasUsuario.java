@@ -4,9 +4,8 @@
  */
 package Modelo;
 
-import Modelo.Conexion;
-import Modelo.Usuario;
 import java.sql.*;
+
 /**
  *
  * @author alfar
@@ -14,105 +13,92 @@ import java.sql.*;
 public class ConsultasUsuario extends Conexion {
 
     public boolean registrar(Usuario usu) {
-        PreparedStatement ps = null;
-        Connection con = getConexion();
-
         String sql = "INSERT INTO usuario (nombre, email, numTelefono, contrasena, TipoUsuario) VALUES (?,?,?,?,?)";
-
-        try {
-            ps = con.prepareStatement(sql);
+        try (Connection con = getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getNombre());
             ps.setString(2, usu.getEmail());
             ps.setInt(3, usu.getNumTelefono());
             ps.setString(4, usu.getContrasena());
             ps.setString(5, usu.getTipoUsuario());
-            ps.execute();
-            return true;
-            
-        } catch(SQLException e) {
-            System.err.println(e);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al registrar usuario: " + e);
             return false;
-        } finally {
-            try {
-                con.close();
-            } catch(SQLException e) {
-                System.err.println(e);
-            }
         }
     }
 
     public boolean buscar(Usuario usu) {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-
-        Connection con = getConexion();
-
         String sql = "SELECT * FROM usuario WHERE email=?";
-
-        try {
-            ps = con.prepareStatement(sql);
+        try (Connection con = getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, usu.getEmail());
-            rs = ps.executeQuery();
-            
-            if(rs.next()) {
-                usu.setNombre(rs.getString("nombre"));
-                usu.setEmail(rs.getString("email"));
-                usu.setNumTelefono(rs.getInt("numTelefono"));
-                usu.setContrasena(rs.getString("contrasena"));
-                usu.setTipoUsuario(rs.getString("TipoUsuario"));
-                return true;
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    usu.setNombre(rs.getString("nombre"));
+                    usu.setEmail(rs.getString("email"));
+                    usu.setNumTelefono(rs.getInt("numTelefono"));
+                    usu.setContrasena(rs.getString("contrasena"));
+                    usu.setTipoUsuario(rs.getString("TipoUsuario"));
+                    return true;
+                }
             }
             return false;
-        } catch(SQLException e) {
-            System.err.println(e);
-            return false;
-        } finally {
-            try {
-                con.close();
-            } catch(SQLException e) {
-                System.err.println(e);
-            }
-        }
-    }
-    public boolean iniciarSesion(Usuario usu) {
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-
-    Connection con = getConexion();
-
-    String sql = "SELECT * FROM usuario WHERE email=? AND contrasena=?";
-
-    try {
-        ps = con.prepareStatement(sql);
-
-        ps.setString(1, usu.getEmail());
-        ps.setString(2, usu.getContrasena());
-
-        rs = ps.executeQuery();
-
-        if (rs.next()) {
-            usu.setNombre(rs.getString("nombre"));
-            usu.setEmail(rs.getString("email"));
-            usu.setNumTelefono(rs.getInt("numTelefono"));
-            usu.setContrasena(rs.getString("contrasena"));
-            usu.setTipoUsuario(rs.getString("TipoUsuario"));
-
-            return true;
-        }
-
-        return false;
-
-    } catch (SQLException e) {
-        System.err.println(e);
-        return false;
-
-    } finally {
-        try {
-            con.close();
         } catch (SQLException e) {
-            System.err.println(e);
+            System.err.println("Error al buscar usuario: " + e);
+            return false;
         }
     }
+
+    public boolean iniciarSesion(Usuario usu) {
+        String sql = "SELECT * FROM usuario WHERE email=? AND contrasena=?";
+        try (Connection con = getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, usu.getEmail());
+            ps.setString(2, usu.getContrasena());
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    usu.setNombre(rs.getString("nombre"));
+                    usu.setEmail(rs.getString("email"));
+                    usu.setNumTelefono(rs.getInt("numTelefono"));
+                    usu.setContrasena(rs.getString("contrasena"));
+                    usu.setTipoUsuario(rs.getString("TipoUsuario"));
+                    return true;
+                }
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println("Error al iniciar sesión: " + e);
+            return false;
+        }
     }
-    
-} 
+
+    public boolean modificar(Usuario usu) {
+        String sql = "UPDATE usuario SET nombre=?, numTelefono=?, contrasena=?, TipoUsuario=? WHERE email=?";
+        try (Connection con = getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, usu.getNombre());
+            ps.setInt(2, usu.getNumTelefono());
+            ps.setString(3, usu.getContrasena());
+            ps.setString(4, usu.getTipoUsuario());
+            ps.setString(5, usu.getEmail());
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al modificar usuario: " + e);
+            return false;
+        }
+    }
+
+    public boolean eliminar(Usuario usu) {
+        String sql = "DELETE FROM usuario WHERE email=?";
+        try (Connection con = getConexion();
+            PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, usu.getEmail());
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error al eliminar usuario: " + e);
+            return false;
+        }
+    }
+
+}
