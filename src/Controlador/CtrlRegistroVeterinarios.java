@@ -8,6 +8,6 @@ package Controlador;
  *
  * @author Usuario
  */
-public class CtrlMascota {
+public class CtrlRegistroVeterinarios {
     
 }
