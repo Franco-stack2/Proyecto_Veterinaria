@@ -4,6 +4,11 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author alfar
@@ -250,9 +255,29 @@ public class FrmInicioSesion extends javax.swing.JFrame {
 public javax.swing.JButton getBtnIniciarSesion() {
     return btnIniciarSesion;
 }
+
+    public static JButton getBtnRegistrarse() {
+        return btnRegistrarse;
+    }
+
+    public JPasswordField getTxtContrasena() {
+        return txtContrasena;
+    }
+
+    public JTextField getTxtEmail() {
+        return txtEmail;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+    
+    
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JButton btnRegistrarse;
+    public static javax.swing.JButton btnIniciarSesion;
+    public static javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -261,8 +286,8 @@ public javax.swing.JButton getBtnIniciarSesion() {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JPasswordField txtContrasena;
-    public javax.swing.JTextField txtEmail;
+    private javax.swing.JPasswordField txtContrasena;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

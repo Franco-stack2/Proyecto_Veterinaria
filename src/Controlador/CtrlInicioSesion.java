@@ -10,6 +10,8 @@ import Vista.FrmInicioSesion;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Vista.FrmFormularioRegistro;
+
 
 public class CtrlInicioSesion implements ActionListener {
 
@@ -31,9 +33,9 @@ public class CtrlInicioSesion implements ActionListener {
     }
 
     public void limpiar() {
-        vista.txtEmail.setText("");
-        vista.txtContrasena.setText("");
-        vista.txtEmail.requestFocus();
+        vista.getTxtEmail().setText("");
+        vista.getTxtContrasena().setText("");
+        vista.getTxtEmail().requestFocus();
     }
 
     @Override
@@ -41,9 +43,9 @@ public class CtrlInicioSesion implements ActionListener {
 
         if (e.getSource() == vista.getBtnIniciarSesion()) {
 
-            modelo.setEmail(vista.txtEmail.getText());
+            modelo.setEmail(vista.getTxtEmail().getText());
             modelo.setContrasena(
-                String.valueOf(vista.txtContrasena.getPassword())
+                String.valueOf(vista.getTxtContrasena().getPassword())
             );
 
             if (consultas.iniciarSesion(modelo)) {
@@ -64,9 +66,21 @@ public class CtrlInicioSesion implements ActionListener {
 
                 limpiar();
             }
+     
+        if (e.getSource() == vista.getBtnRegistrarse()) { 
+       
+            Usuario modU = new Usuario();
+            ConsultasUsuario conU = new ConsultasUsuario();
+            FrmFormularioRegistro frmReg = new FrmFormularioRegistro();
+            
+  
+            CtrlFormularioRegistro ctrlReg = new CtrlFormularioRegistro(modU, conU, frmReg);
+            
+         
+            frmReg.setLocationRelativeTo(null);
+            frmReg.setVisible(true);
+            vista.dispose(); 
         }
     }
-    
-  
-  
+}
 }
