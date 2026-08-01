@@ -11,12 +11,12 @@ public class Cita {
     
     
     private int id_cita;
-    private Date fecha;
+    private String fecha;
     private String tipoCita;
     private Usuario usuario;
     private Mascota mascota;
 
-    public Cita(int id_cita, Date fecha, String tipoCita, Usuario usuario, Mascota mascota) {
+    public Cita(int id_cita, String fecha, String tipoCita, Usuario usuario, Mascota mascota) {
         this.id_cita = id_cita;
         this.fecha = fecha;
         this.tipoCita = tipoCita;
@@ -26,7 +26,7 @@ public class Cita {
     
         public Cita() {
         this.id_cita = 0;
-        this.fecha = null;
+        this.fecha = "";
         this.tipoCita = "";
         this.usuario = null;
         this.mascota = null;
@@ -40,11 +40,11 @@ public class Cita {
         this.id_cita = id_cita;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

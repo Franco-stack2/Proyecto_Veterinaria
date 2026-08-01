@@ -58,16 +58,28 @@ public class CtrlInicioSesion implements ActionListener {
 
                 limpiar();
 
-            } else {
-
-                JOptionPane.showMessageDialog(
-                    null,
-                    "Correo o contraseña incorrectos"
-                );
-
-                limpiar();
+             String rol = modelo.getTipoUsuario().trim();
+            
+            if (rol.equalsIgnoreCase("Dueño") || rol.equalsIgnoreCase("Duenio")) {
+                Vista.EdicionCitas vistaCitas = new Vista.EdicionCitas();
+                Modelo.Cita modeloCita = new Modelo.Cita();
+                Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
+                
+                Controlador.CtrlEdicionCitas ctrlCitas = new Controlador.CtrlEdicionCitas(modeloCita, consultasCita, vistaCitas);
+                
+                vistaCitas.setLocationRelativeTo(null);
+                vistaCitas.setVisible(true);
+                
+                vista.dispose(); // esto cierra el login en el que estabamos
             }
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Correo o contraseña incorrectos");
+
+            limpiar();
         }
+    }
         if (e.getSource() == vista.getBtnRegistrarse()) { 
        
             Usuario modU = new Usuario();

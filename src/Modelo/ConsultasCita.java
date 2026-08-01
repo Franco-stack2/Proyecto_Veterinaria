@@ -15,7 +15,7 @@ public class ConsultasCita extends Conexion {
         String sql = "INSERT INTO cita (id_cita, fecha, tipoCita, emailUsuario, nombreMascota) VALUES (?,?,?,?,?)";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, cita.getId_cita());
-            ps.setDate(2, (Date) cita.getFecha());
+            ps.setString(2, cita.getFecha());
             ps.setString(3, cita.getTipoCita());
             ps.setString(4, cita.getUsuario().getEmail());
             ps.setString(5, cita.getMascota().getNombreMascota());
@@ -33,7 +33,7 @@ public class ConsultasCita extends Conexion {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     cita.setId_cita(rs.getInt("id_cita"));
-                    cita.setFecha(rs.getDate("fecha"));
+                    cita.setFecha(rs.getString("fecha"));
                     cita.setTipoCita(rs.getString("tipoCita"));
                     return true;
                 }
@@ -45,29 +45,32 @@ public class ConsultasCita extends Conexion {
         }
     }
 
-    public boolean modificar(Cita cita) {
-        String sql = "UPDATE cita SET fecha=?, tipoCita=?, emailUsuario=?, nombreMascota=? WHERE id_cita=?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setDate(1, (java.sql.Date) cita.getFecha());
-            ps.setString(2, cita.getTipoCita());
-            ps.setString(3, cita.getUsuario().getEmail());
-            ps.setString(4, cita.getMascota().getNombreMascota());
-            ps.setInt(5, cita.getId_cita());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al modificar cita: " + e);
-            return false;
-        }
+public boolean modificar(Cita cita) {
+    String sql = "UPDATE cita SET fecha = ? WHERE id_cita = ?";
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        ps.setString(1, cita.getFecha()); 
+        ps.setInt(2, cita.getId_cita());   
+        
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.err.println("Error al reprogramar la fecha de la cita: " + e);
+        return false;
     }
+}
 
-    public boolean eliminar(Cita cita) {
-        String sql = "DELETE FROM cita WHERE id_cita=?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, cita.getId_cita());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al eliminar cita: " + e);
-            return false;
-        }
+
+ public boolean eliminar(Cita cita) {
+    String sql = "DELETE FROM cita WHERE id_cita = ?";
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setInt(1, cita.getId_cita());
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.err.println("Error al eliminar: " + e);
+        return false;
     }
-}    
+}
+     
+   
+    
+}
