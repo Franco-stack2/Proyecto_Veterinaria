@@ -104,10 +104,10 @@ public class EdicionCitas extends javax.swing.JFrame {
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(BtnMenuAvisos))
+                .addGap(36, 36, 36)
+                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(BtnMenuAvisos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
