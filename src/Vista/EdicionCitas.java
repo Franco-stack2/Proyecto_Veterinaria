@@ -46,6 +46,8 @@ public class EdicionCitas extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         TxtIdCita = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,7 +130,6 @@ public class EdicionCitas extends javax.swing.JFrame {
 
         TxtFechaHora.setBackground(new java.awt.Color(247, 247, 247));
         TxtFechaHora.setForeground(new java.awt.Color(102, 102, 102));
-        TxtFechaHora.setText("Fecha y hora");
         TxtFechaHora.setToolTipText("");
         TxtFechaHora.setBorder(null);
         TxtFechaHora.addActionListener(this::TxtFechaHoraActionPerformed);
@@ -147,10 +148,13 @@ public class EdicionCitas extends javax.swing.JFrame {
 
         TxtIdCita.setBackground(new java.awt.Color(247, 247, 247));
         TxtIdCita.setForeground(new java.awt.Color(102, 102, 102));
-        TxtIdCita.setText("Numero de la cita");
         TxtIdCita.setToolTipText("");
         TxtIdCita.setBorder(null);
         TxtIdCita.addActionListener(this::TxtIdCitaActionPerformed);
+
+        jLabel5.setText("Numero de cita");
+
+        jLabel6.setText("Fecha y hora");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
@@ -171,7 +175,11 @@ public class EdicionCitas extends javax.swing.JFrame {
                         .addContainerGap(43, Short.MAX_VALUE)
                         .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TxtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel6))
+                            .addComponent(jLabel5))))
                 .addGap(49, 49, 49))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
@@ -179,11 +187,15 @@ public class EdicionCitas extends javax.swing.JFrame {
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addGap(39, 39, 39)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TxtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TxtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -301,6 +313,8 @@ public class EdicionCitas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel sideBarRegistroMascotas;
     // End of variables declaration//GEN-END:variables
