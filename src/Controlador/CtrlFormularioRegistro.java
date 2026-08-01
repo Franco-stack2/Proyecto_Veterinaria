@@ -11,29 +11,33 @@ package Controlador;
 
 import Modelo.ConsultasUsuario;
 import Modelo.Usuario;
-import Vista.FrmFormularioRegistro;
+import Modelo.Duenio;             
+import Modelo.ConsultasDuenio;       
+import Modelo.Veterinario;         
+import Modelo.ConsultasVeterinario; 
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
-import java.awt.event.*;
-
+import java.awt.event.ActionListener;
+import Vista.FrmFormularioRegistro;
 
 public class CtrlFormularioRegistro implements ActionListener {
-    
+
+
  private final Usuario modelo;
     private final ConsultasUsuario consultas;
     private final FrmFormularioRegistro vista;
 
- 
     public CtrlFormularioRegistro(Usuario modelo, ConsultasUsuario consultas, FrmFormularioRegistro vista) {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
         
-     
+       
         this.vista.getBtnRegistrarUsuario().addActionListener(this);
     }
 
     public void limpiar() {
+       // Limpieza de campos utilizando métodos Getters que se hicieron en vista :/
         vista.getTxtNombre().setText("");
         vista.getTxtCorreoElectronico().setText("");
         vista.getTxtContrasena().setText("");
@@ -44,29 +48,68 @@ public class CtrlFormularioRegistro implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-   
+        
+
         if (e.getSource() == vista.getBtnRegistrarUsuario()) {
             
-   
+      
             if (vista.getCmbTipoUsuario().getSelectedIndex() == 0) {
                 JOptionPane.showMessageDialog(null, "Por favor, seleccione un tipo de usuario válido.");
                 return;
             }
 
-   
-            modelo.setNombre(vista.getTxtNombre().getText());
-            modelo.setEmail(vista.getTxtCorreoElectronico().getText());
-            modelo.setContrasena(vista.getTxtContrasena().getText());
-            modelo.setNumTelefono(vista.getTxtNumTelefonico().getText());
-            modelo.setTipoUsuario(vista.getCmbTipoUsuario().getSelectedItem().toString());
+            // Mapeamos los datos de la interfaz al modelo utilizando métodos Getters
+            modelo.setNombre(vista.getTxtNombre().getText().trim());
+            modelo.setEmail(vista.getTxtCorreoElectronico().getText().trim());
+            modelo.setContrasena(vista.getTxtContrasena().getText().trim());
+            modelo.setNumTelefono(vista.getTxtNumTelefonico().getText().trim());
+            
+            // Obtenemos el rol seleccionado mediante el Getter del ComboBox
+            String rolSeleccionado = vista.getCmbTipoUsuario().getSelectedItem().toString().trim();
+            modelo.setTipoUsuario(rolSeleccionado);
 
-  
+            // 1. Usamos tu método original que devuelve TRUE o FALSE
             if (consultas.registrar(modelo)) {
-                JOptionPane.showMessageDialog(null, "¡Usuario registrado con éxito en la base de datos!");
-                limpiar();
+                
+                boolean insercionHijaCorrecta = true;
+
+                // 2. Si el rol necesita tabla hija, buscamos el ID creado
+                if (rolSeleccionado.equalsIgnoreCase("Dueño") || rolSeleccionado.equalsIgnoreCase("Duenio") || rolSeleccionado.equalsIgnoreCase("Veterinario")) {
+                    
+         
+                    if (consultas.buscar(modelo)) {
+                        int nuevoIdUsuario = modelo.getId_usuario(); 
+                        
+                        // CASO A: uno es el dueño
+                        if (rolSeleccionado.equalsIgnoreCase("Dueño") || rolSeleccionado.equalsIgnoreCase("Duenio")) {
+                            Duenio due = new Duenio();
+                            ConsultasDuenio conDue = new ConsultasDuenio(); 
+                            due.setId_usuario(nuevoIdUsuario);
+                            insercionHijaCorrecta = conDue.registrar(due);
+                        } 
+                        // CASO B: es el veterinario
+                        else if (rolSeleccionado.equalsIgnoreCase("Veterinario")) {
+                            Veterinario vet = new Veterinario();
+                            ConsultasVeterinario conVet = new ConsultasVeterinario();
+                            vet.setId_usuario(nuevoIdUsuario);
+                            insercionHijaCorrecta = conVet.registrar(vet);
+                        }
+                    } else {
+                        insercionHijaCorrecta = false;
+                    }
+                }
+
+   
+                if (insercionHijaCorrecta) {
+                    JOptionPane.showMessageDialog(null, "¡Registro guardado con éxito! Tipo: " + rolSeleccionado);
+                    limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Se creó el usuario base, pero hubo un fallo al indexarlo en la tabla secundaria.");
+                }
+                
             } else {
-                JOptionPane.showMessageDialog(null, "Error al guardar el usuario. Verifique la conexión.");
+                JOptionPane.showMessageDialog(null, "Error al guardar el usuario. Verifique si el correo ya existe.");
             }
         }
-    }
+    } 
 }

@@ -24,6 +24,7 @@ public class CtrlInicioSesion implements ActionListener {
         this.consultas = consultas;
         this.vista = vista;
         this.vista.getBtnIniciarSesion().addActionListener(this);
+        this.vista.getBtnRegistrarse().addActionListener(this);
     }
 
     public void iniciar() {
@@ -66,7 +67,7 @@ public class CtrlInicioSesion implements ActionListener {
 
                 limpiar();
             }
-     
+        }
         if (e.getSource() == vista.getBtnRegistrarse()) { 
        
             Usuario modU = new Usuario();
@@ -82,5 +83,4 @@ public class CtrlInicioSesion implements ActionListener {
             vista.dispose(); 
         }
     }
-}
 }
