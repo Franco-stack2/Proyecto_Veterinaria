@@ -30,27 +30,32 @@ public class ConsultasUsuario extends Conexion {
         }
     }
 
-    public boolean buscar(Usuario usu) {
-        String sql = "SELECT * FROM usuario WHERE id_usuario=?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(1, usu.getEmail());
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    usu.setId_usuario(rs.getInt("id_usuario"));
-                    usu.setNombre(rs.getString("nombre"));
-                    usu.setEmail(rs.getString("email"));
-                    usu.setNumTelefono(rs.getString("numTelefono"));
-                    usu.setContrasena(rs.getString("contrasena"));
-                    usu.setTipoUsuario(rs.getString("TipoUsuario"));
-                    return true;
-                }
+  public boolean buscar(Usuario usu) {
+   
+    String sql = "SELECT * FROM usuario WHERE email=?"; 
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        
+  
+        ps.setString(1, usu.getEmail()); 
+        
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+    
+                usu.setId_usuario(rs.getInt("id_usuario")); 
+                usu.setNombre(rs.getString("nombre"));
+                usu.setEmail(rs.getString("email"));
+                usu.setNumTelefono(rs.getString("numTelefono"));
+                usu.setContrasena(rs.getString("contrasena"));
+                usu.setTipoUsuario(rs.getString("TipoUsuario"));
+                return true;
             }
-            return false;
-        } catch (SQLException e) {
-            System.err.println("Error al buscar usuario: " + e);
-            return false;
         }
+        return false;
+    } catch (SQLException e) {
+        System.err.println("Error al buscar usuario: " + e);
+        return false;
     }
+}
 
     public boolean iniciarSesion(Usuario usu) {
         String sql = "SELECT * FROM usuario "
