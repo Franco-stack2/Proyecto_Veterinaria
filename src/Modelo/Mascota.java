@@ -14,6 +14,7 @@ public class Mascota {
     private String vacunas;
     private String servicios;
     private String medicamentos;
+    private int id_mascota;
 
     // Constructor vacío (por defecto)
     public Mascota() {
@@ -22,15 +23,17 @@ public class Mascota {
         this.vacunas = "";
         this.servicios = "";
         this.medicamentos= "";
+        this.id_mascota= 0;
     }
 
     // Constructor con parámetros
-    public Mascota(String nombreMascota, String razaMascota, String vacunas, String servicios, String medicamentos) {
+    public Mascota(String nombreMascota, String razaMascota, String vacunas, String servicios, String medicamentos, int id_mascota) {
         this.nombreMascota = nombreMascota;
         this.razaMascota = razaMascota;
         this.vacunas = vacunas;
         this.servicios = servicios;
         this.medicamentos = medicamentos;
+        this.id_mascota = id_mascota;
     }
 
     public String getNombreMascota() {
@@ -72,5 +75,18 @@ public class Mascota {
     public void setMedicamentos(String medicamentos) {
         this.medicamentos = medicamentos;
     }
+
+    public int getId_mascota() {
+        return id_mascota;
+    }
+
+    public void setId_mascota(int id_mascota) {
+        this.id_mascota = id_mascota;
+    }
+    
+    
+    
+    
 }
+
     // Getters y Setters
