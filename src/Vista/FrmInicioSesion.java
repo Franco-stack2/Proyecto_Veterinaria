@@ -286,8 +286,8 @@ public javax.swing.JButton getBtnIniciarSesion() {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField txtContrasena;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtNombre;
+    public static javax.swing.JPasswordField txtContrasena;
+    public static javax.swing.JTextField txtEmail;
+    public static javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
