@@ -14,9 +14,8 @@ import java.sql.*;
 
 public class ConsultasVeterinario extends Conexion {
 
-
     public boolean registrar(Veterinario vet) {
-       
+
         String sql = "INSERT INTO veterinario (id_usuario) VALUES (?)";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, vet.getId_usuario());
@@ -27,13 +26,12 @@ public class ConsultasVeterinario extends Conexion {
         }
     }
 
-  
     public boolean buscar(Veterinario vet) {
-         String sql = "SELECT m.nombreMascota, m.razaMascota, m.vacunas, m.servicios, m.medicamentos, d.id_dueno, u.nombre "
-                + "FROM mascota m "
-                + "INNER JOIN usuario u "
-                + "ON d.id_usuario = u.id_usuario "
-                + "WHERE m.nombreMascota = ?";
+        String sql = "SELECT v.id_veterinario, v.especialidad, u.id_usuario, u.nombre, u.email, u.numTelefono, u.contrasena, u.TipoUsuario "
+        + "FROM veterinario v "
+        + "INNER JOIN usuario u "
+        + "ON v.id_usuario = u.id_usuario "
+        + "WHERE v.id_veterinario = ?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, vet.getId_veterinario());
             try (ResultSet rs = ps.executeQuery()) {
@@ -50,7 +48,6 @@ public class ConsultasVeterinario extends Conexion {
         }
     }
 
-
     public boolean modificar(Veterinario vet) {
         String sql = "UPDATE veterinario SET id_usuario=? WHERE id_veterinario=?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
@@ -63,7 +60,6 @@ public class ConsultasVeterinario extends Conexion {
         }
     }
 
- 
     public boolean eliminar(Veterinario vet) {
         String sql = "DELETE FROM veterinario WHERE id_veterinario=?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
