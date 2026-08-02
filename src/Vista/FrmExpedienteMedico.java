@@ -302,11 +302,11 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAnadir;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnExpedienteMedico;
-    private javax.swing.JButton btnGenerarReportes;
-    private javax.swing.JButton btnRegistro;
+    public static javax.swing.JButton btnAnadir;
+    public static javax.swing.JButton btnCancelar;
+    public static javax.swing.JButton btnExpedienteMedico;
+    public static javax.swing.JButton btnGenerarReportes;
+    public static javax.swing.JButton btnRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -315,9 +315,9 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtAlergias;
-    private javax.swing.JTextField txtCondicionesPasadas;
-    private javax.swing.JTextField txtNombreMascota;
-    private javax.swing.JTextField txtNumEmergencia;
+    public static javax.swing.JTextField txtAlergias;
+    public static javax.swing.JTextField txtCondicionesPasadas;
+    public static javax.swing.JTextField txtNombreMascota;
+    public static javax.swing.JTextField txtNumEmergencia;
     // End of variables declaration//GEN-END:variables
 }
