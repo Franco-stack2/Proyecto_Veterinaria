@@ -39,7 +39,7 @@ public class EdicionCitas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         sideBarRegistroMascotas = new javax.swing.JPanel();
         BtnMenuAvisos = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCitas = new javax.swing.JButton();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         TxtFechaHora = new javax.swing.JTextField();
@@ -97,7 +97,8 @@ public class EdicionCitas extends javax.swing.JFrame {
         BtnMenuAvisos.setText("Avisos");
         BtnMenuAvisos.addActionListener(this::BtnMenuAvisosActionPerformed);
 
-        jButton1.setText("Citas");
+        btnCitas.setText("Citas");
+        btnCitas.addActionListener(this::btnCitasActionPerformed);
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
@@ -107,14 +108,14 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BtnMenuAvisos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jButton1)
+                .addComponent(btnCitas)
                 .addGap(18, 18, 18)
                 .addComponent(BtnMenuAvisos)
                 .addContainerGap(307, Short.MAX_VALUE))
@@ -253,6 +254,10 @@ public class EdicionCitas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtFechaHoraActionPerformed
 
+    private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCitasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -302,13 +307,13 @@ public class EdicionCitas extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnMenuAvisos;
+    public static javax.swing.JButton BtnMenuAvisos;
     private javax.swing.JPanel RegistroMascotasCentro;
-    private javax.swing.JTextField TxtFechaHora;
-    private javax.swing.JTextField TxtIdCita;
-    private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JTextField TxtFechaHora;
+    public static javax.swing.JTextField TxtIdCita;
+    public static transient javax.swing.JButton btnAgregar;
+    public static javax.swing.JButton btnCancelar;
+    public static javax.swing.JButton btnCitas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
