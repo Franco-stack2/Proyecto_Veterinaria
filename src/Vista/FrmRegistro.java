@@ -42,7 +42,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         btnGenerarReportes = new javax.swing.JButton();
         btnRegistros = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnRegistrarDuenos.setBackground(new java.awt.Color(51, 51, 255));
         btnRegistrarDuenos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
