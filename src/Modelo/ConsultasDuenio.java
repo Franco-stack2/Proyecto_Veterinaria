@@ -21,10 +21,10 @@ public class ConsultasDuenio extends Conexion {
 
     public boolean buscar(Duenio duenio) {
         String sql = "SELECT d.id_dueno, u.id_usuario, u.nombre, u.email, u.numTelefono, u.contrasena, u.TipoUsuario "
-                + "FROM duenio d "
-                + "INNER JOIN usuario u "
-                + "ON d.id_usuario = u.id_usuario "
-                + "WHERE d.id_dueno = ?";
+        + "FROM duenio d "
+        + "INNER JOIN usuario u "
+        + "ON d.id_usuario = u.id_usuario "
+        + "WHERE d.id_dueno = ?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, duenio.getId_dueno());
             try (ResultSet rs = ps.executeQuery()) {
