@@ -29,7 +29,11 @@ public class ConsultasVeterinario extends Conexion {
 
   
     public boolean buscar(Veterinario vet) {
-        String sql = "SELECT * FROM veterinario WHERE id_veterinario=?";
+         String sql = "SELECT m.nombreMascota, m.razaMascota, m.vacunas, m.servicios, m.medicamentos, d.id_dueno, u.nombre "
+                + "FROM mascota m "
+                + "INNER JOIN usuario u "
+                + "ON d.id_usuario = u.id_usuario "
+                + "WHERE m.nombreMascota = ?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, vet.getId_veterinario());
             try (ResultSet rs = ps.executeQuery()) {
