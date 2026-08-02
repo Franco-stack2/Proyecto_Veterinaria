@@ -41,16 +41,16 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
         jTextArea4 = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombredelaMascota = new javax.swing.JTextField();
+        txtTelefonoEmergencia = new javax.swing.JTextField();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtTratamientosAplicados = new javax.swing.JTextArea();
+        btnGenerar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         sideBarRegistroMascotas = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        btnRegistroCitas = new javax.swing.JButton();
+        btnAgendarCitas = new javax.swing.JButton();
+        btnHistorial = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -121,51 +121,56 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Home\\Generar Reportes");
 
-        jTextField7.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField7.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField7.setText("Nombre de la mascota");
-        jTextField7.setToolTipText("");
-        jTextField7.setBorder(null);
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtNombredelaMascota.setBackground(new java.awt.Color(247, 247, 247));
+        txtNombredelaMascota.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombredelaMascota.setText("Nombre de la mascota");
+        txtNombredelaMascota.setToolTipText("");
+        txtNombredelaMascota.setBorder(null);
+        txtNombredelaMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtNombredelaMascotaActionPerformed(evt);
             }
         });
 
-        jTextField8.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField8.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField8.setText("Telefono de emergencia");
-        jTextField8.setToolTipText("");
-        jTextField8.setBorder(null);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoEmergencia.setBackground(new java.awt.Color(247, 247, 247));
+        txtTelefonoEmergencia.setForeground(new java.awt.Color(102, 102, 102));
+        txtTelefonoEmergencia.setText("Telefono de emergencia");
+        txtTelefonoEmergencia.setToolTipText("");
+        txtTelefonoEmergencia.setBorder(null);
+        txtTelefonoEmergencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtTelefonoEmergenciaActionPerformed(evt);
             }
         });
 
         jScrollPane5.setBorder(null);
 
-        jTextArea5.setEditable(false);
-        jTextArea5.setBackground(new java.awt.Color(247, 247, 247));
-        jTextArea5.setColumns(20);
-        jTextArea5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea5.setRows(5);
-        jTextArea5.setText("Tratamientos aplicados");
-        jTextArea5.setBorder(null);
-        jScrollPane5.setViewportView(jTextArea5);
+        txtTratamientosAplicados.setEditable(false);
+        txtTratamientosAplicados.setBackground(new java.awt.Color(247, 247, 247));
+        txtTratamientosAplicados.setColumns(20);
+        txtTratamientosAplicados.setForeground(new java.awt.Color(0, 0, 0));
+        txtTratamientosAplicados.setRows(5);
+        txtTratamientosAplicados.setText("Tratamientos aplicados");
+        txtTratamientosAplicados.setBorder(null);
+        jScrollPane5.setViewportView(txtTratamientosAplicados);
 
-        jButton1.setBackground(new java.awt.Color(143, 175, 148));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Generar");
-
-        jButton2.setBackground(new java.awt.Color(228, 134, 134));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnGenerar.setBackground(new java.awt.Color(143, 175, 148));
+        btnGenerar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnGenerar.setForeground(new java.awt.Color(0, 0, 0));
+        btnGenerar.setText("Generar");
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnGenerarActionPerformed(evt);
+            }
+        });
+
+        btnCancelar.setBackground(new java.awt.Color(228, 134, 134));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
             }
         });
 
@@ -178,7 +183,7 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -186,13 +191,13 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                             .addGap(39, 39, 39))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                                .addComponent(jTextField7))
+                                .addComponent(txtTelefonoEmergencia, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                                .addComponent(txtNombredelaMascota))
                             .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1)
+                        .addComponent(btnGenerar)
                         .addGap(49, 49, 49))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -201,16 +206,16 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(jLabel17)
                 .addGap(32, 32, 32)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombredelaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTelefonoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -218,41 +223,53 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Registro citas");
+        btnRegistroCitas.setText("Registro citas");
+        btnRegistroCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroCitasActionPerformed(evt);
+            }
+        });
 
-        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Agendar citas");
+        btnAgendarCitas.setText("Agendar citas");
+        btnAgendarCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgendarCitasActionPerformed(evt);
+            }
+        });
 
-        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel16.setText("Historial");
+        btnHistorial.setText("Historial");
+        btnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistorialActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
-                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, sideBarRegistroMascotasLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnAgendarCitas)
+                            .addComponent(btnRegistroCitas))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel11)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(btnRegistroCitas)
+                .addGap(23, 23, 23)
+                .addComponent(btnAgendarCitas)
+                .addGap(29, 29, 29)
+                .addComponent(btnHistorial)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
@@ -281,7 +298,7 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,17 +331,33 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtNombredelaMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombredelaMascotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtNombredelaMascotaActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtTelefonoEmergenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoEmergenciaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtTelefonoEmergenciaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnRegistroCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistroCitasActionPerformed
+
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistorialActionPerformed
+
+    private void btnAgendarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgendarCitasActionPerformed
+
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGenerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,15 +395,15 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAgendarCitas;
+    public static javax.swing.JButton btnCancelar;
+    public static javax.swing.JButton btnGenerar;
+    private javax.swing.JButton btnHistorial;
+    private javax.swing.JButton btnRegistroCitas;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -381,15 +414,15 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JPanel sideBarRegistroMascotas;
     private javax.swing.JTextField txtNombreMascota;
+    public static javax.swing.JTextField txtNombredelaMascota;
     private javax.swing.JTextField txtNumEmergencia;
+    public static javax.swing.JTextField txtTelefonoEmergencia;
+    public static javax.swing.JTextArea txtTratamientosAplicados;
     // End of variables declaration//GEN-END:variables
 }
