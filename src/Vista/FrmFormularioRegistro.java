@@ -214,18 +214,18 @@ public class FrmFormularioRegistro extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistrarUsuario;
-    private javax.swing.JComboBox<String> cmbTipoUsuario;
+    public static javax.swing.JButton btnRegistrarUsuario;
+    public static javax.swing.JComboBox<String> cmbTipoUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField txtContrasena;
-    private javax.swing.JTextField txtCorreoElectronico;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNumTelefonico;
+    public static javax.swing.JTextField txtContrasena;
+    public static javax.swing.JTextField txtCorreoElectronico;
+    public static javax.swing.JTextField txtNombre;
+    public static javax.swing.JTextField txtNumTelefonico;
     // End of variables declaration//GEN-END:variables
 }
 
