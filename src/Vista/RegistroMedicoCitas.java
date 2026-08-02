@@ -33,18 +33,18 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         sideBarRegistroMascotas = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        Registro = new javax.swing.JButton();
+        btnAgendarCitas = new javax.swing.JButton();
+        btnHistorialdepaciente = new javax.swing.JButton();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        txtNombremascota = new javax.swing.JTextField();
+        txtVacunasaplicadas = new javax.swing.JTextField();
+        txtTratamientorecetado = new javax.swing.JTextField();
+        btnAgregar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        txtRegistrardiagnostico = new javax.swing.JTextField();
+        txtMedicamentosrecetados = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -91,42 +91,41 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Registros medicos de citas");
+        Registro.setText("Registros");
+        Registro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Registro.addActionListener(this::RegistroActionPerformed);
 
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Agendar citas");
+        btnAgendarCitas.setText("Agendar Citas");
+        btnAgendarCitas.addActionListener(this::btnAgendarCitasActionPerformed);
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Historial de paciente");
+        btnHistorialdepaciente.setText("Historial de paciente");
+        btnHistorialdepaciente.setBorder(null);
+        btnHistorialdepaciente.addActionListener(this::btnHistorialdepacienteActionPerformed);
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+            .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addGap(14, 14, 14))
+                    .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
+                        .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAgendarCitas, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(btnHistorialdepaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+                .addContainerGap())
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addGap(42, 42, 42)
+                .addComponent(Registro)
+                .addGap(36, 36, 36)
+                .addComponent(btnAgendarCitas)
+                .addGap(29, 29, 29)
+                .addComponent(btnHistorialdepaciente)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -138,50 +137,52 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Registros medicos de citas");
 
-        jTextField4.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField4.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField4.setText("Nombre de la mascota");
-        jTextField4.setToolTipText("");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(this::jTextField4ActionPerformed);
+        txtNombremascota.setBackground(new java.awt.Color(247, 247, 247));
+        txtNombremascota.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombremascota.setText("Nombre de la mascota");
+        txtNombremascota.setToolTipText("");
+        txtNombremascota.setBorder(null);
+        txtNombremascota.addActionListener(this::txtNombremascotaActionPerformed);
 
-        jTextField5.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField5.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField5.setText("Vacunas aplicadas");
-        jTextField5.setToolTipText("");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(this::jTextField5ActionPerformed);
+        txtVacunasaplicadas.setBackground(new java.awt.Color(247, 247, 247));
+        txtVacunasaplicadas.setForeground(new java.awt.Color(102, 102, 102));
+        txtVacunasaplicadas.setText("Vacunas aplicadas");
+        txtVacunasaplicadas.setToolTipText("");
+        txtVacunasaplicadas.setBorder(null);
+        txtVacunasaplicadas.addActionListener(this::txtVacunasaplicadasActionPerformed);
 
-        jTextField6.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField6.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField6.setText("Tramiento recetado");
-        jTextField6.setToolTipText("");
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(this::jTextField6ActionPerformed);
+        txtTratamientorecetado.setBackground(new java.awt.Color(247, 247, 247));
+        txtTratamientorecetado.setForeground(new java.awt.Color(102, 102, 102));
+        txtTratamientorecetado.setText("Tramiento recetado");
+        txtTratamientorecetado.setToolTipText("");
+        txtTratamientorecetado.setBorder(null);
+        txtTratamientorecetado.addActionListener(this::txtTratamientorecetadoActionPerformed);
 
-        jButton1.setBackground(new java.awt.Color(143, 175, 148));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Agregar");
+        btnAgregar.setBackground(new java.awt.Color(143, 175, 148));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(this::btnAgregarActionPerformed);
 
-        jButton2.setBackground(new java.awt.Color(228, 134, 134));
-        jButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Cancelar");
+        btnCancelar.setBackground(new java.awt.Color(228, 134, 134));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
-        jTextField7.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField7.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField7.setText("Registrar diagnostico");
-        jTextField7.setToolTipText("");
-        jTextField7.setBorder(null);
-        jTextField7.addActionListener(this::jTextField7ActionPerformed);
+        txtRegistrardiagnostico.setBackground(new java.awt.Color(247, 247, 247));
+        txtRegistrardiagnostico.setForeground(new java.awt.Color(102, 102, 102));
+        txtRegistrardiagnostico.setText("Registrar diagnostico");
+        txtRegistrardiagnostico.setToolTipText("");
+        txtRegistrardiagnostico.setBorder(null);
+        txtRegistrardiagnostico.addActionListener(this::txtRegistrardiagnosticoActionPerformed);
 
-        jTextField8.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField8.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField8.setText("Medicamentos recetados");
-        jTextField8.setToolTipText("");
-        jTextField8.setBorder(null);
-        jTextField8.addActionListener(this::jTextField8ActionPerformed);
+        txtMedicamentosrecetados.setBackground(new java.awt.Color(247, 247, 247));
+        txtMedicamentosrecetados.setForeground(new java.awt.Color(102, 102, 102));
+        txtMedicamentosrecetados.setText("Medicamentos recetados");
+        txtMedicamentosrecetados.setToolTipText("");
+        txtMedicamentosrecetados.setBorder(null);
+        txtMedicamentosrecetados.addActionListener(this::txtMedicamentosrecetadosActionPerformed);
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
@@ -194,15 +195,15 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMedicamentosrecetados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRegistrardiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTratamientorecetado, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVacunasaplicadas, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombremascota, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
@@ -211,19 +212,19 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
                 .addGap(31, 31, 31)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombremascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRegistrardiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtTratamientorecetado, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtVacunasaplicadas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMedicamentosrecetados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
@@ -258,25 +259,45 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtNombremascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombremascotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtNombremascotaActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtVacunasaplicadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVacunasaplicadasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtVacunasaplicadasActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtTratamientorecetadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTratamientorecetadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtTratamientorecetadoActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtRegistrardiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegistrardiagnosticoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtRegistrardiagnosticoActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtMedicamentosrecetadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMedicamentosrecetadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtMedicamentosrecetadosActionPerformed
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnAgendarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgendarCitasActionPerformed
+
+    private void RegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegistroActionPerformed
+
+    private void btnHistorialdepacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialdepacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistorialdepacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,22 +325,22 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JButton Registro;
     private javax.swing.JPanel RegistroMascotasCentro;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public static javax.swing.JButton btnAgendarCitas;
+    public static javax.swing.JButton btnAgregar;
+    public static javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnHistorialdepaciente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JPanel navbarRegistroCitas;
-    private javax.swing.JPanel sideBarRegistroMascotas;
+    public static javax.swing.JPanel sideBarRegistroMascotas;
+    public static javax.swing.JTextField txtMedicamentosrecetados;
+    public static javax.swing.JTextField txtNombremascota;
+    public static javax.swing.JTextField txtRegistrardiagnostico;
+    public static javax.swing.JTextField txtTratamientorecetado;
+    public static javax.swing.JTextField txtVacunasaplicadas;
     // End of variables declaration//GEN-END:variables
 }
