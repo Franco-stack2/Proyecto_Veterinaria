@@ -68,26 +68,26 @@ public class CtrlFormularioRegistro implements ActionListener {
             String rolSeleccionado = vista.getCmbTipoUsuario().getSelectedItem().toString().trim();
             modelo.setTipoUsuario(rolSeleccionado);
 
-            // 1. Usamos tu método original que devuelve TRUE o FALSE
+     
             if (consultas.registrar(modelo)) {
                 
                 boolean insercionHijaCorrecta = true;
 
-                // 2. Si el rol necesita tabla hija, buscamos el ID creado
+            
                 if (rolSeleccionado.equalsIgnoreCase("Dueño") || rolSeleccionado.equalsIgnoreCase("Duenio") || rolSeleccionado.equalsIgnoreCase("Veterinario")) {
                     
          
                     if (consultas.buscar(modelo)) {
                         int nuevoIdUsuario = modelo.getId_usuario(); 
                         
-                        // CASO A: uno es el dueño
+   
                         if (rolSeleccionado.equalsIgnoreCase("Dueño") || rolSeleccionado.equalsIgnoreCase("Duenio")) {
                             Duenio due = new Duenio();
                             ConsultasDuenio conDue = new ConsultasDuenio(); 
                             due.setId_usuario(nuevoIdUsuario);
                             insercionHijaCorrecta = conDue.registrar(due);
                         } 
-                        // CASO B: es el veterinario
+ 
                         else if (rolSeleccionado.equalsIgnoreCase("Veterinario")) {
                             Veterinario vet = new Veterinario();
                             ConsultasVeterinario conVet = new ConsultasVeterinario();

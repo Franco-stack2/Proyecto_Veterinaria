@@ -73,10 +73,10 @@ public class CtrlEdicionCitas implements ActionListener {
             }
         }
 
-        // ACCIÓN C: CANCELAR CITA EXISTENTE POR ID (Botón Cancelar)
+    
         if (e.getSource() == vista.getBtnCancelar()) {
             
-            // Validamos que hayan puesto el ID para poder borrar
+           
             if (vista.getTxtIdCita().getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, ingrese el ID de la cita para cancelarla.");
                 return;
@@ -99,7 +99,7 @@ public class CtrlEdicionCitas implements ActionListener {
         }
     }
 
-    // 5. MÉTODO AUXILIAR PARA LIMPIAR LOS COMPONENTES DE LA INTERFAZ
+
     public void limpiar() {
         vista.getTxtIdCita().setText("");
         vista.getTxtFechaHora().setText("");

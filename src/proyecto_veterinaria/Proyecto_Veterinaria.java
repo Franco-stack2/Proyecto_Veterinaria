@@ -25,15 +25,15 @@ public class Proyecto_Veterinaria {
     public static void main(String[] args) {
         
         
-              // Inicializamos las tres capas esenciales del Login
+           
         Usuario modUsuario = new Usuario();
         ConsultasUsuario conUsuario = new ConsultasUsuario();
         FrmInicioSesion frmLogin = new FrmInicioSesion();
         
-        // Inyectamos las capas al controlador
+
         CtrlInicioSesion ctrlLogin = new CtrlInicioSesion(modUsuario, conUsuario, frmLogin);
         
-        // Arrancamos la aplicación
+        
         ctrlLogin.iniciar();
     }
 }
