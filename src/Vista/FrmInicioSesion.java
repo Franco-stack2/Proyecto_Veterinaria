@@ -48,7 +48,7 @@ public class FrmInicioSesion extends javax.swing.JFrame {
         txtContrasena = new javax.swing.JPasswordField();
         btnIniciarSesion = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 255));
 
