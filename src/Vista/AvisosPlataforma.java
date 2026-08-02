@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author vaneu
@@ -28,15 +31,21 @@ public class AvisosPlataforma extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BtnMenuAvisos = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         sideBarRegistroMascotas = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        btnEditarCitas = new javax.swing.JButton();
+        btnAvisos = new javax.swing.JButton();
         RegistroMascotasCentro1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAvisosTablon = new javax.swing.JTextArea();
+
+        BtnMenuAvisos.setText("Avisos");
+        BtnMenuAvisos.addActionListener(this::BtnMenuAvisosActionPerformed);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,34 +98,29 @@ public class AvisosPlataforma extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Citas");
+        btnEditarCitas.setText("Citas");
 
-        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Avisos");
+        btnAvisos.setText("Avisos");
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+            .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(24, 24, 24))
+                    .addComponent(btnEditarCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(btnAvisos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, Short.MAX_VALUE))
+                .addGap(51, 51, 51))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(btnEditarCitas)
+                .addGap(20, 20, 20)
+                .addComponent(btnAvisos)
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         RegistroMascotasCentro1.setBackground(new java.awt.Color(255, 255, 255));
@@ -127,6 +131,11 @@ public class AvisosPlataforma extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Avisos de plataforma");
 
+        txtAvisosTablon.setEditable(false);
+        txtAvisosTablon.setColumns(20);
+        txtAvisosTablon.setRows(5);
+        jScrollPane2.setViewportView(txtAvisosTablon);
+
         javax.swing.GroupLayout RegistroMascotasCentro1Layout = new javax.swing.GroupLayout(RegistroMascotasCentro1);
         RegistroMascotasCentro1.setLayout(RegistroMascotasCentro1Layout);
         RegistroMascotasCentro1Layout.setHorizontalGroup(
@@ -135,13 +144,23 @@ public class AvisosPlataforma extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(168, Short.MAX_VALUE))
+            .addGroup(RegistroMascotasCentro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistroMascotasCentro1Layout.createSequentialGroup()
+                    .addGap(16, 16, 16)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(23, Short.MAX_VALUE)))
         );
         RegistroMascotasCentro1Layout.setVerticalGroup(
             RegistroMascotasCentro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroMascotasCentro1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel8)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(RegistroMascotasCentro1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(RegistroMascotasCentro1Layout.createSequentialGroup()
+                    .addGap(71, 71, 71)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(192, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,6 +194,10 @@ public class AvisosPlataforma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnMenuAvisosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuAvisosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnMenuAvisosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,15 +223,30 @@ public class AvisosPlataforma extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new AvisosPlataforma().setVisible(true));
     }
 
+    public JButton getBtnEditarCitas() {
+        return btnEditarCitas;
+    }
+
+    public JTextArea getTxtAvisosTablon() {
+        return txtAvisosTablon;
+    }
+
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnMenuAvisos;
     private javax.swing.JPanel RegistroMascotasCentro1;
+    private javax.swing.JButton btnAvisos;
+    private javax.swing.JButton btnEditarCitas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel sideBarRegistroMascotas;
+    private javax.swing.JTextArea txtAvisosTablon;
     // End of variables declaration//GEN-END:variables
 }

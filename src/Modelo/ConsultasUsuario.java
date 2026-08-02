@@ -108,4 +108,30 @@ public class ConsultasUsuario extends Conexion {
             return false;
         }
     }
+    
+    public String obtenerAvisosPlataforma() { 
+    StringBuilder listado = new StringBuilder();
+    String sql = "SELECT titulo, contenido FROM avisos ORDER BY id_aviso DESC"; 
+    
+    try (Connection con = getConexion(); 
+         PreparedStatement ps = con.prepareStatement(sql); 
+         ResultSet rs = ps.executeQuery()) {
+        
+        while (rs.next()) {
+            listado.append("📢 ").append(rs.getString("titulo").toUpperCase()).append("\n");
+            listado.append(rs.getString("contenido")).append("\n");
+            listado.append("----------------------------------------------------------------------\n\n");
+        }
+        
+        if (listado.length() == 0) {
+            return "No hay avisos importantes en la plataforma por el momento.";
+        }
+        
+        return listado.toString();
+        
+    } catch (SQLException e) {
+        System.err.println("Error al cargar avisos: " + e);
+        return "Error al conectar con el servidor de avisos.";
+    }
+}
 }
