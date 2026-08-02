@@ -27,7 +27,13 @@ public class ConsultasCita extends Conexion {
     }
 
     public boolean buscar(Cita cita) {
-        String sql = "SELECT * FROM cita WHERE id_cita=?";
+        String sql = "SELECT c.id_cita, c.fecha, c.tipoCita, u.nombre, m.nombreMascota "
+        + "FROM cita c "
+        + "INNER JOIN usuario u "
+        + "ON c.id_usuario = u.id_usuario "
+        + "INNER JOIN mascota m "
+        + "ON c.id_mascota = m.id_mascota "
+        + "WHERE c.id_cita = ?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, cita.getId_cita());
             try (ResultSet rs = ps.executeQuery()) {
