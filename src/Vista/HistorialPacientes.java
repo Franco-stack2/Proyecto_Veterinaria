@@ -36,22 +36,22 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        txtIngresarNombreMascota = new javax.swing.JTextField();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtConsultasregistradas = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtEnfermedades = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        txtAlergias = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea6 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        txtCondicionespasadas = new javax.swing.JTextArea();
+        btnBuscar = new javax.swing.JButton();
         sideBarRegistroMascotas = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
+        btnRegistrosMedicosCitas = new javax.swing.JButton();
+        btnAgendarcitas = new javax.swing.JButton();
+        btnHistorialPaciente = new javax.swing.JButton();
 
         jScrollPane3.setBorder(null);
 
@@ -90,6 +90,12 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jLabel18.setText("jLabel3");
         jLabel18.setToolTipText("");
 
+        txtIngresarNombreMascota.setBackground(new java.awt.Color(247, 247, 247));
+        txtIngresarNombreMascota.setForeground(new java.awt.Color(0, 0, 0));
+        txtIngresarNombreMascota.setText("Ingrese el nombre de la mascota");
+        txtIngresarNombreMascota.setBorder(null);
+        txtIngresarNombreMascota.addActionListener(this::txtIngresarNombreMascotaActionPerformed);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -97,11 +103,13 @@ public class HistorialPacientes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
+                .addGap(18, 18, 18)
+                .addComponent(txtIngresarNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,11 +118,13 @@ public class HistorialPacientes extends javax.swing.JFrame {
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(txtIngresarNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel17))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel9, java.awt.BorderLayout.NORTH);
@@ -127,60 +137,55 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Consultar Historial Paciente");
 
-        jTextField1.setBackground(new java.awt.Color(247, 247, 247));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setText("Ingrese el nombre de la mascota");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-
         jScrollPane1.setBorder(null);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(247, 247, 247));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Consultas registradas");
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtConsultasregistradas.setEditable(false);
+        txtConsultasregistradas.setBackground(new java.awt.Color(247, 247, 247));
+        txtConsultasregistradas.setColumns(20);
+        txtConsultasregistradas.setForeground(new java.awt.Color(0, 0, 0));
+        txtConsultasregistradas.setRows(5);
+        txtConsultasregistradas.setText("Consultas registradas");
+        txtConsultasregistradas.setBorder(null);
+        jScrollPane1.setViewportView(txtConsultasregistradas);
 
         jScrollPane2.setBorder(null);
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(247, 247, 247));
-        jTextArea2.setColumns(20);
-        jTextArea2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Enfermedades");
-        jTextArea2.setBorder(null);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtEnfermedades.setEditable(false);
+        txtEnfermedades.setBackground(new java.awt.Color(247, 247, 247));
+        txtEnfermedades.setColumns(20);
+        txtEnfermedades.setForeground(new java.awt.Color(0, 0, 0));
+        txtEnfermedades.setRows(5);
+        txtEnfermedades.setText("Enfermedades");
+        txtEnfermedades.setBorder(null);
+        jScrollPane2.setViewportView(txtEnfermedades);
 
         jScrollPane4.setBorder(null);
 
-        jTextArea4.setEditable(false);
-        jTextArea4.setBackground(new java.awt.Color(247, 247, 247));
-        jTextArea4.setColumns(20);
-        jTextArea4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Alergias\n");
-        jTextArea4.setBorder(null);
-        jScrollPane4.setViewportView(jTextArea4);
+        txtAlergias.setEditable(false);
+        txtAlergias.setBackground(new java.awt.Color(247, 247, 247));
+        txtAlergias.setColumns(20);
+        txtAlergias.setForeground(new java.awt.Color(0, 0, 0));
+        txtAlergias.setRows(5);
+        txtAlergias.setText("Alergias\n");
+        txtAlergias.setBorder(null);
+        jScrollPane4.setViewportView(txtAlergias);
 
         jScrollPane6.setBorder(null);
 
-        jTextArea6.setEditable(false);
-        jTextArea6.setBackground(new java.awt.Color(247, 247, 247));
-        jTextArea6.setColumns(20);
-        jTextArea6.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea6.setRows(5);
-        jTextArea6.setText("Condiciones pasadas");
-        jTextArea6.setBorder(null);
-        jScrollPane6.setViewportView(jTextArea6);
+        txtCondicionespasadas.setEditable(false);
+        txtCondicionespasadas.setBackground(new java.awt.Color(247, 247, 247));
+        txtCondicionespasadas.setColumns(20);
+        txtCondicionespasadas.setForeground(new java.awt.Color(0, 0, 0));
+        txtCondicionespasadas.setRows(5);
+        txtCondicionespasadas.setText("Condiciones pasadas");
+        txtCondicionespasadas.setBorder(null);
+        jScrollPane6.setViewportView(txtCondicionespasadas);
 
-        jButton1.setBackground(new java.awt.Color(143, 175, 148));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Buscar");
+        btnBuscar.setBackground(new java.awt.Color(143, 175, 148));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(this::btnBuscarActionPerformed);
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
@@ -197,20 +202,17 @@ public class HistorialPacientes extends javax.swing.JFrame {
                             .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                        .addGap(223, 223, 223)
+                        .addComponent(btnBuscar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
             RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel19)
-                .addGap(33, 33, 33)
-                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -219,7 +221,7 @@ public class HistorialPacientes extends javax.swing.JFrame {
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(RegistroMascotasCentro, java.awt.BorderLayout.CENTER);
@@ -227,40 +229,40 @@ public class HistorialPacientes extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        jLabel20.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel20.setText("Registros medicos citas");
+        btnRegistrosMedicosCitas.setText("Registro medicos citas");
+        btnRegistrosMedicosCitas.setBorder(null);
+        btnRegistrosMedicosCitas.addActionListener(this::btnRegistrosMedicosCitasActionPerformed);
 
-        jLabel21.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel21.setText("Agendar citas");
+        btnAgendarcitas.setText("Agendar citas");
+        btnAgendarcitas.setBorder(null);
+        btnAgendarcitas.addActionListener(this::btnAgendarcitasActionPerformed);
 
-        jLabel22.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel22.setText("Historial de paciente");
+        btnHistorialPaciente.setText("Historial de paciente");
+        btnHistorialPaciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnHistorialPaciente.addActionListener(this::btnHistorialPacienteActionPerformed);
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel22)))
+                .addGap(14, 14, 14)
+                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnHistorialPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAgendarcitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegistrosMedicosCitas, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                .addContainerGap())
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel20)
+                .addGap(39, 39, 39)
+                .addComponent(btnRegistrosMedicosCitas)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel21)
+                .addComponent(btnAgendarcitas)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel22)
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addComponent(btnHistorialPaciente)
+                .addContainerGap(371, Short.MAX_VALUE))
         );
 
         getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
@@ -268,9 +270,25 @@ public class HistorialPacientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtIngresarNombreMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIngresarNombreMascotaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtIngresarNombreMascotaActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnHistorialPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHistorialPacienteActionPerformed
+
+    private void btnRegistrosMedicosCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrosMedicosCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrosMedicosCitasActionPerformed
+
+    private void btnAgendarcitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarcitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgendarcitasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,14 +317,14 @@ public class HistorialPacientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel RegistroMascotasCentro;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton btnAgendarcitas;
+    public static javax.swing.JButton btnBuscar;
+    public static javax.swing.JButton btnHistorialPaciente;
+    public static javax.swing.JButton btnRegistrosMedicosCitas;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -314,13 +332,13 @@ public class HistorialPacientes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel sideBarRegistroMascotas;
+    public static javax.swing.JTextArea txtAlergias;
+    public static javax.swing.JTextArea txtCondicionespasadas;
+    public static javax.swing.JTextArea txtConsultasregistradas;
+    public static javax.swing.JTextArea txtEnfermedades;
+    public static javax.swing.JTextField txtIngresarNombreMascota;
     // End of variables declaration//GEN-END:variables
 }
