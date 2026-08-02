@@ -99,8 +99,10 @@ public class AvisosPlataforma extends javax.swing.JFrame {
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
         btnEditarCitas.setText("Citas");
+        btnEditarCitas.addActionListener(this::btnEditarCitasActionPerformed);
 
         btnAvisos.setText("Avisos");
+        btnAvisos.addActionListener(this::btnAvisosActionPerformed);
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
@@ -108,10 +110,10 @@ public class AvisosPlataforma extends javax.swing.JFrame {
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEditarCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(btnAvisos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, Short.MAX_VALUE))
-                .addGap(51, 51, 51))
+                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnAvisos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEditarCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,6 +199,14 @@ public class AvisosPlataforma extends javax.swing.JFrame {
     private void BtnMenuAvisosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuAvisosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnMenuAvisosActionPerformed
+
+    private void btnAvisosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvisosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAvisosActionPerformed
+
+    private void btnEditarCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarCitasActionPerformed
 
     /**
      * @param args the command line arguments

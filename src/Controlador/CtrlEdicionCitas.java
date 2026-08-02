@@ -31,16 +31,15 @@ public class CtrlEdicionCitas implements ActionListener {
         this.vista.getBtnMenuAvisos().addActionListener(this); 
     }
 
-    // 4. INTERCEPTOR DE CLICS (Eventos de la interfaz)
+  
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        // ACCIÓN A: NAVEGACIÓN LATERAL - IR A AVISOS
+   
         if (e.getSource() == vista.getBtnMenuAvisos()) {
             
             AvisosPlataforma vistaAvisos = new AvisosPlataforma();
-            //CtrlAvisosPlataforma ctrlAvisos = new CtrlAvisosPlataforma(vistaAvisos);  ESTO ES ESENCIAL NO TOCAR POR EL MOMENTO 
-            
+            CtrlAvisosPlataforma ctrlAvisos = new CtrlAvisosPlataforma(vistaAvisos); 
             vistaAvisos.setLocationRelativeTo(null);
             vistaAvisos.setVisible(true);
             

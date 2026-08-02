@@ -164,13 +164,13 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnEditarCitas" alignment="0" pref="64" max="32767" attributes="0"/>
-                      <Component id="btnAvisos" pref="64" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btnAvisos" max="32767" attributes="0"/>
+                      <Component id="btnEditarCitas" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -191,11 +191,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Citas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarCitasActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnAvisos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Avisos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAvisosActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
