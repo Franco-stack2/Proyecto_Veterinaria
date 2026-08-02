@@ -248,8 +248,8 @@ public class AvisosPlataforma extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnMenuAvisos;
     private javax.swing.JPanel RegistroMascotasCentro1;
-    private javax.swing.JButton btnAvisos;
-    private javax.swing.JButton btnEditarCitas;
+    public static javax.swing.JButton btnAvisos;
+    public static javax.swing.JButton btnEditarCitas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -257,6 +257,6 @@ public class AvisosPlataforma extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel sideBarRegistroMascotas;
-    private javax.swing.JTextArea txtAvisosTablon;
+    public static javax.swing.JTextArea txtAvisosTablon;
     // End of variables declaration//GEN-END:variables
 }
