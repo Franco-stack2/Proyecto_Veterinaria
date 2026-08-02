@@ -59,7 +59,6 @@ public boolean modificar(Cita cita) {
     }
 }
 
-
  public boolean eliminar(Cita cita) {
     String sql = "DELETE FROM cita WHERE id_cita = ?";
     try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
@@ -70,7 +69,4 @@ public boolean modificar(Cita cita) {
         return false;
     }
 }
-     
-   
-    
 }
