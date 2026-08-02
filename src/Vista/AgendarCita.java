@@ -48,7 +48,7 @@ public class AgendarCita extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnAgendar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -271,12 +271,12 @@ public class AgendarCita extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgendar;
-    private javax.swing.JButton btnAgendarCitas;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnConsultarHistorialPacientes;
-    private javax.swing.JButton btnRegistrosMedicosCitas;
-    private javax.swing.JComboBox<String> cmbTipoCita;
+    public static javax.swing.JButton btnAgendar;
+    public static javax.swing.JButton btnAgendarCitas;
+    public static javax.swing.JButton btnCancelar;
+    public static javax.swing.JButton btnConsultarHistorialPacientes;
+    public static javax.swing.JButton btnRegistrosMedicosCitas;
+    public static javax.swing.JComboBox<String> cmbTipoCita;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -286,9 +286,9 @@ public class AgendarCita extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtFechayHora;
-    private javax.swing.JTextField txtNombreDueno;
-    private javax.swing.JTextField txtNombreMascota;
-    private javax.swing.JTextField txtNombreMedico;
+    public static javax.swing.JTextField txtFechayHora;
+    public static javax.swing.JTextField txtNombreDueno;
+    public static javax.swing.JTextField txtNombreMascota;
+    public static javax.swing.JTextField txtNombreMedico;
     // End of variables declaration//GEN-END:variables
 }
