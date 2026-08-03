@@ -100,7 +100,7 @@ public class CtrlFormularioRegistro implements ActionListener {
                 }
 
    
-                if (insercionHijaCorrecta) {
+                if (insercionHijaCorrecta) { // esta linea funciona como interruptor de seguridad del sistema dependiendo del rol seleccionado 
                     JOptionPane.showMessageDialog(null, "¡Registro guardado con éxito! Tipo: " + rolSeleccionado);
                     limpiar();
                 } else {
