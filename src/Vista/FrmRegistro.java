@@ -36,8 +36,6 @@ public class FrmRegistro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnRegistrarDuenos = new javax.swing.JButton();
-        btnRegistrarVeterinarios = new javax.swing.JButton();
         btnRegistrarMascotasyHistorial = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,16 +48,6 @@ public class FrmRegistro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        btnRegistrarDuenos.setBackground(new java.awt.Color(51, 51, 255));
-        btnRegistrarDuenos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnRegistrarDuenos.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrarDuenos.setText("Registrar Dueños");
-
-        btnRegistrarVeterinarios.setBackground(new java.awt.Color(51, 51, 255));
-        btnRegistrarVeterinarios.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnRegistrarVeterinarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegistrarVeterinarios.setText("Registrar Veterinarios");
-
         btnRegistrarMascotasyHistorial.setBackground(new java.awt.Color(51, 51, 255));
         btnRegistrarMascotasyHistorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnRegistrarMascotasyHistorial.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,7 +59,6 @@ public class FrmRegistro extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Hola,Administrador");
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoSmall.jpg"))); // NOI18N
@@ -129,7 +116,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         sideBarRegistroMascotasLayout.setHorizontalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(42, Short.MAX_VALUE)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnExpedienteMedico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRegistros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -153,14 +140,10 @@ public class FrmRegistro extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRegistrarMascotasyHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrarDuenos, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrarVeterinarios, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(111, 111, 111))
+                .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81)
+                .addComponent(btnRegistrarMascotasyHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -169,17 +152,13 @@ public class FrmRegistro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(btnRegistrarDuenos)
-                .addGap(55, 55, 55)
-                .addComponent(btnRegistrarVeterinarios)
-                .addGap(49, 49, 49)
-                .addComponent(btnRegistrarMascotasyHistorial)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 70, Short.MAX_VALUE)
                 .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrarMascotasyHistorial)
+                .addGap(175, 175, 175))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -225,12 +204,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                        FrmRegistro reg = new FrmRegistro();
-        ConsultasCita conUsuario = new ConsultasCita();
-        FrmInicioSesion frmLogin = new FrmInicioSesion();
-                        CtrlRegistro ctrlRegitro = new CtrlRegistro(conUsuario, reg);
-
-                reg.setVisible(true);
+  
             }
         });
     }
@@ -241,15 +215,10 @@ public class FrmRegistro extends javax.swing.JFrame {
        public JButton getBtnGenerarReportes() {
         return btnGenerarReportes;
     }
-       public JButton getBtnRegistrarDuenos() {
-        return btnRegistrarDuenos;
-    }
        public JButton getBtnRegistrarMascotasyHistorial() {
         return btnRegistrarMascotasyHistorial;
     } 
-       public JButton getBtnRegistrarVeterinarios() {
-        return btnRegistrarVeterinarios;
-    } 
+
        public JButton getBtnRegistros() {
         return btnRegistros;
     }
@@ -259,9 +228,7 @@ public class FrmRegistro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnExpedienteMedico;
     public static javax.swing.JButton btnGenerarReportes;
-    public static javax.swing.JButton btnRegistrarDuenos;
     public static javax.swing.JButton btnRegistrarMascotasyHistorial;
-    public static javax.swing.JButton btnRegistrarVeterinarios;
     public static javax.swing.JButton btnRegistros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
