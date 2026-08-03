@@ -1,5 +1,8 @@
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author vaneu
@@ -31,7 +34,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         sideBarRegistroMascotas = new javax.swing.JPanel();
         btnRegistro = new javax.swing.JButton();
-        btnExpedientemedico = new javax.swing.JButton();
+        btnExpedienteMedico = new javax.swing.JButton();
         btnGenerarReportes = new javax.swing.JButton();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -96,9 +99,9 @@ public class RegistroMascotas extends javax.swing.JFrame {
         btnRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegistro.addActionListener(this::btnRegistroActionPerformed);
 
-        btnExpedientemedico.setText("Expediente Medico");
-        btnExpedientemedico.setBorder(null);
-        btnExpedientemedico.addActionListener(this::btnExpedientemedicoActionPerformed);
+        btnExpedienteMedico.setText("Expediente Medico");
+        btnExpedienteMedico.setBorder(null);
+        btnExpedienteMedico.addActionListener(this::btnExpedienteMedicoActionPerformed);
 
         btnGenerarReportes.setText("Generar Reportes");
         btnGenerarReportes.setBorder(null);
@@ -112,7 +115,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                    .addComponent(btnExpedientemedico, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(btnExpedienteMedico, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                     .addComponent(btnGenerarReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
@@ -122,7 +125,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(btnRegistro)
                 .addGap(27, 27, 27)
-                .addComponent(btnExpedientemedico)
+                .addComponent(btnExpedienteMedico)
                 .addGap(18, 18, 18)
                 .addComponent(btnGenerarReportes)
                 .addContainerGap(202, Short.MAX_VALUE))
@@ -267,9 +270,9 @@ public class RegistroMascotas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistroActionPerformed
 
-    private void btnExpedientemedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedientemedicoActionPerformed
+    private void btnExpedienteMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExpedienteMedicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnExpedientemedicoActionPerformed
+    }//GEN-LAST:event_btnExpedienteMedicoActionPerformed
 
     private void btnGenerarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReportesActionPerformed
         // TODO add your handling code here:
@@ -297,14 +300,63 @@ public class RegistroMascotas extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegistroMascotas().setVisible(true));
+        
+ 
+     java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new RegistroMascotas().setVisible(true);
+            }
+        });
     }
+   public static JButton getBtnAgregar() {
+        return btnAgregar;
+    }
+
+    public static JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public static JButton getBtnExpedienteMedico() {
+        return btnExpedienteMedico;
+    }
+
+    public static JButton getBtnGenerarReportes() {
+        return btnGenerarReportes;
+    }
+
+    public static JButton getBtnRegistro() {
+        return btnRegistro;
+    }
+
+    public static JTextField getTxtMedicamentosregistrados() {
+        return txtMedicamentosregistrados;
+    }
+
+    public static JTextField getTxtNombreMascota() {
+        return txtNombreMascota;
+    }
+
+    public static JTextField getTxtRaza() {
+        return txtRaza;
+    }
+
+    public static JTextField getTxtVacunasregistrados() {
+        return txtVacunasregistrados;
+    }
+
+
+    public static JTextField getTxtServiciosregistrados() {
+        return txtServiciosregistrados;
+    }
+    
+    
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel RegistroMascotasCentro;
     public static javax.swing.JButton btnAgregar;
     public static javax.swing.JButton btnCancelar;
-    public static javax.swing.JButton btnExpedientemedico;
+    public static javax.swing.JButton btnExpedienteMedico;
     public static javax.swing.JButton btnGenerarReportes;
     public static javax.swing.JButton btnRegistro;
     private javax.swing.JLabel jLabel1;
@@ -320,4 +372,5 @@ public class RegistroMascotas extends javax.swing.JFrame {
     public static javax.swing.JTextField txtServiciosregistrados;
     public static javax.swing.JTextField txtVacunasregistrados;
     // End of variables declaration//GEN-END:variables
+
 }

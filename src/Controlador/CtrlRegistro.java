@@ -6,6 +6,8 @@ package Controlador;
 
 import Modelo.Cita;
 import Modelo.ConsultasCita;
+import Vista.FrmExpedienteMedico;
+import Vista.FrmGenerarcionReportes;
 import Vista.FrmRegistro;
 import Vista.RegistroMascotas;
 import java.awt.event.ActionEvent;
@@ -49,15 +51,45 @@ public class CtrlRegistro implements ActionListener {
          //para abrir pagina de registrar mascotas, funcion del boton registro veterinario
         if (e.getSource() == vista.getBtnRegistrarMascotasyHistorial()) {
           
+          
             RegistroMascotas vistaRegistroMascotas = new RegistroMascotas();
-            CtrlRegistroMascotas ctrlRegistroMascotas = new CtrlRegistroMascotas ();//vistaRegistroVeterinarios);
+            // CtrlRegistroMascotas ctrlRegistroMascotas = new CtrlRegistroMascotas ();//vistaRegistroVeterinarios);
             vistaRegistroMascotas.setLocationRelativeTo(null);
             vistaRegistroMascotas.setVisible(true);
+            //RegistroMascotas vistaRegistroMascotas = new RegistroMascotas();
+
             
             this.vista.dispose(); // que se cierre
+            
+        }
+        
+        
+        //para abrir pagina de expediente medico, funcion del boton expediente medico
+        if (e.getSource() == vista.getBtnExpedienteMedico()) {
+          
+            FrmExpedienteMedico vistaExpedienteMedico = new FrmExpedienteMedico();
+            CtrlExpedienteMedico ctrlExpedienteMedico = new CtrlExpedienteMedico ();//vistaExpedienteMedico);
+            vistaExpedienteMedico.setLocationRelativeTo(null);
+            vistaExpedienteMedico.setVisible(true);
+            
+            this.vista.dispose(); // que se cierre
+            //expediente medico
+            
+        }
+            //generacion reportes
+            
+            //para abrir pagina de generacion de reportes, funcion del boton generar reporte
+        if (e.getSource() == vista.getBtnGenerarReportes()) {
+          
+            FrmGenerarcionReportes vistaGenerarcionReportes  = new FrmGenerarcionReportes ();
+            CtrlGenerarcionReportes ctrlGenerarcionReportes  = new CtrlGenerarcionReportes  ();//vistaGenerarcionReportes );
+            vistaGenerarcionReportes.setLocationRelativeTo(null);
+            vistaGenerarcionReportes.setVisible(true);
   
     
+        }
+        
     }
+}
 
-
-    }}
+        

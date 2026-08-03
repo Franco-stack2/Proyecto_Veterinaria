@@ -134,7 +134,7 @@
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnRegistro" pref="117" max="32767" attributes="0"/>
-                          <Component id="btnExpedientemedico" alignment="0" pref="117" max="32767" attributes="0"/>
+                          <Component id="btnExpedienteMedico" alignment="0" pref="117" max="32767" attributes="0"/>
                           <Component id="btnGenerarReportes" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
@@ -147,7 +147,7 @@
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="btnRegistro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btnExpedientemedico" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExpedienteMedico" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnGenerarReportes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="202" max="32767" attributes="0"/>
@@ -172,7 +172,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="btnExpedientemedico">
+            <Component class="javax.swing.JButton" name="btnExpedienteMedico">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Expediente Medico"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -180,7 +180,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExpedientemedicoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExpedienteMedicoActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
