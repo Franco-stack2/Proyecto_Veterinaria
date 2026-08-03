@@ -99,7 +99,7 @@ public class AgendarCita extends javax.swing.JFrame {
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Hola doctor");
+        jLabel1.setText("Hola, doctor");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jLabel2.setText("Home\\ Agendar Cita");

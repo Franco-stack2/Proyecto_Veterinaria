@@ -4,6 +4,12 @@
  */
 package Vista;
 
+import Controlador.CtrlRegistro;
+import Modelo.ConsultasCita;
+import Modelo.ConsultasUsuario;
+import Modelo.Usuario;
+import javax.swing.JButton;
+
 /**
  *
  * @author alfar
@@ -219,10 +225,36 @@ public class FrmRegistro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmRegistro().setVisible(true);
+                        FrmRegistro reg = new FrmRegistro();
+        ConsultasCita conUsuario = new ConsultasCita();
+        FrmInicioSesion frmLogin = new FrmInicioSesion();
+                        CtrlRegistro ctrlRegitro = new CtrlRegistro(conUsuario, reg);
+
+                reg.setVisible(true);
             }
         });
     }
+    
+      public JButton getBtnExpedienteMedico() {
+        return btnExpedienteMedico;     
+    }
+       public JButton getBtnGenerarReportes() {
+        return btnGenerarReportes;
+    }
+       public JButton getBtnRegistrarDuenos() {
+        return btnRegistrarDuenos;
+    }
+       public JButton getBtnRegistrarMascotasyHistorial() {
+        return btnRegistrarMascotasyHistorial;
+    } 
+       public JButton getBtnRegistrarVeterinarios() {
+        return btnRegistrarVeterinarios;
+    } 
+       public JButton getBtnRegistros() {
+        return btnRegistros;
+    }
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnExpedienteMedico;

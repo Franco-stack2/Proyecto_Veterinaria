@@ -72,6 +72,36 @@ public class CtrlInicioSesion implements ActionListener {
                 
                 vista.dispose(); // esto cierra el login en el que estabamos
             }
+            
+            
+            //cuando un administrador hace inicio de sesion
+            else if (rol.equalsIgnoreCase("Administrador")){
+                Vista.FrmRegistro vistaRegistro = new Vista.FrmRegistro();
+                Modelo.Cita modeloCita = new Modelo.Cita();
+                Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
+                
+                Controlador.CtrlRegistro ctrlRegistro = new Controlador.CtrlRegistro(modeloCita, consultasCita, vistaRegistro);
+                
+                vistaRegistro.setLocationRelativeTo(null);
+                vistaRegistro.setVisible(true);
+                
+                vista.dispose(); // esto cierra el login en el que estabamos
+            }
+            
+            //cuando un veterinario hace inicio de sesion
+            else if (rol.equalsIgnoreCase("Veterinario")){
+                Vista.RegistroMedicoCitas vistaMedicoCitas = new Vista.RegistroMedicoCitas();
+                Modelo.Cita modeloCita = new Modelo.Cita();
+                Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
+                
+                Controlador.CtrlRegistroMedicoCitas ctrlRegistroMedicoCitas = new Controlador.CtrlRegistroMedicoCitas(modeloCita, consultasCita, vistaRegistro);
+                
+                vistaMedicoCitas.setLocationRelativeTo(null);
+                vistaMedicoCitas.setVisible(true);
+                
+                vista.dispose(); // esto cierra el login en el que estabamos
+            }
+         
 
         } else {
 
