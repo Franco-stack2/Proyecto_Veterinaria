@@ -8,7 +8,6 @@ import Modelo.Cita;
 import Modelo.ConsultasCita;
 import Vista.FrmExpedienteMedico;
 import Vista.FrmGenerarcionReportes;
-import Vista.FrmRegistro;
 import Vista.RegistroMascotas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,10 +25,9 @@ public class CtrlRegistroMascotas implements ActionListener {
 
     private final Cita modelo;
     private final ConsultasCita consultas;
-    private final FrmRegistro vista;
-
+    private final RegistroMascotas vista;
    
-    public CtrlRegistro(Cita modelo, ConsultasCita consultas, FrmRegistro vista) {
+    public CtrlRegistroMascotas (Cita modelo, ConsultasCita consultas, RegistroMascotas vista) {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;

@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controlador;
+/*
+package Recursos;
 
+import Controlador.CtrlExpedienteMedico;
+import Controlador.CtrlGenerarcionReportes;
 import Modelo.Cita;
 import Modelo.ConsultasCita;
 import Vista.FrmExpedienteMedico;
@@ -17,7 +20,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Usuario
- */
+
 public class CtrlRegistro implements ActionListener {
     
    
@@ -92,4 +95,4 @@ public class CtrlRegistro implements ActionListener {
     }
 }
 
-        
+    */

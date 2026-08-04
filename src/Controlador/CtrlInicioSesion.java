@@ -80,7 +80,7 @@ public class CtrlInicioSesion implements ActionListener {
                 Modelo.Cita modeloCita = new Modelo.Cita();
                 Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
                 
-                Controlador.CtrlRegistro ctrlRegistro = new Controlador.CtrlRegistro(modeloCita, consultasCita, vistaRegistro);
+                Recursos.CtrlRegistro ctrlRegistro = new Recursos.CtrlRegistro(modeloCita, consultasCita, vistaRegistro);
                 
                 vistaRegistro.setLocationRelativeTo(null);
                 vistaRegistro.setVisible(true);
