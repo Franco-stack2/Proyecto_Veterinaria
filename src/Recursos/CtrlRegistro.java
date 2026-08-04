@@ -88,8 +88,8 @@ public class CtrlRegistro implements ActionListener {
             CtrlGenerarcionReportes ctrlGenerarcionReportes  = new CtrlGenerarcionReportes  ();//vistaGenerarcionReportes );
             vistaGenerarcionReportes.setLocationRelativeTo(null);
             vistaGenerarcionReportes.setVisible(true);
-  
-    
+
+
         }
         
     }
