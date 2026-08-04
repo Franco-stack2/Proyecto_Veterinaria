@@ -125,5 +125,4 @@ public class CtrlInicioSesion implements ActionListener {
             vista.dispose(); 
         }
     }
-    
 } 
