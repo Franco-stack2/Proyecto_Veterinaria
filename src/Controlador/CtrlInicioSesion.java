@@ -74,7 +74,7 @@ public class CtrlInicioSesion implements ActionListener {
             }
             
             
-            //cuando un administrador hace inicio de sesion
+            //cuando un administrador hace inicio de sesion hay que corregir esto 
             else if (rol.equalsIgnoreCase("Administrador")){
                 Vista.FrmRegistro vistaRegistro = new Vista.FrmRegistro();
                 Modelo.Cita modeloCita = new Modelo.Cita();
