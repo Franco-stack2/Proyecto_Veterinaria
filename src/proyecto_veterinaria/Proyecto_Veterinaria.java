@@ -16,6 +16,10 @@ import Modelo.Usuario;
 import Modelo.ConsultasUsuario;
 import Vista.FrmInicioSesion;
 import Controlador.CtrlInicioSesion;
+import Modelo.Mascota;
+import Modelo.ConsultasMascota;
+import Vista.RegistroMascotas;
+import Controlador.CtrlRegistroMascotas;
 
 public class Proyecto_Veterinaria {
 
@@ -35,6 +39,17 @@ public class Proyecto_Veterinaria {
         
         
         ctrlLogin.iniciar();
+        
+        Mascota modelo = new Mascota(); 
+        ConsultasMascota consultas = new ConsultasMascota(); 
+        RegistroMascotas vista = new RegistroMascotas();
+        
+        CtrlRegistroMascotas controlador = new CtrlRegistroMascotas(modelo, consultas, vista);
+        
+        
+        
+        
+        
     }
 }
     
