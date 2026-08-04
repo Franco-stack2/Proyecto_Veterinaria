@@ -215,7 +215,7 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -269,7 +269,7 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addComponent(btnAgendarCitas)
                 .addGap(29, 29, 29)
                 .addComponent(btnHistorial)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
@@ -298,7 +298,7 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,11 +395,11 @@ public class FrmGenerarcionReportes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgendarCitas;
+    public static javax.swing.JButton btnAgendarCitas;
     public static javax.swing.JButton btnCancelar;
     public static javax.swing.JButton btnGenerar;
-    private javax.swing.JButton btnHistorial;
-    private javax.swing.JButton btnRegistroCitas;
+    public static javax.swing.JButton btnHistorial;
+    public static javax.swing.JButton btnRegistroCitas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
