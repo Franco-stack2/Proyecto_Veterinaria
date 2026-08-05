@@ -35,7 +35,6 @@ public class RegistroMascotas extends javax.swing.JFrame {
         sideBarRegistroMascotas = new javax.swing.JPanel();
         btnRegistro = new javax.swing.JButton();
         btnExpedienteMedico = new javax.swing.JButton();
-        btnGenerarReportes = new javax.swing.JButton();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         txtRaza = new javax.swing.JTextField();
@@ -45,6 +44,13 @@ public class RegistroMascotas extends javax.swing.JFrame {
         txtServiciosregistrados = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtMedicamentosregistrados1 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -103,10 +109,6 @@ public class RegistroMascotas extends javax.swing.JFrame {
         btnExpedienteMedico.setBorder(null);
         btnExpedienteMedico.addActionListener(this::btnExpedienteMedicoActionPerformed);
 
-        btnGenerarReportes.setText("Generar Reportes");
-        btnGenerarReportes.setBorder(null);
-        btnGenerarReportes.addActionListener(this::btnGenerarReportesActionPerformed);
-
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
         sideBarRegistroMascotas.setLayout(sideBarRegistroMascotasLayout);
         sideBarRegistroMascotasLayout.setHorizontalGroup(
@@ -115,8 +117,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                    .addComponent(btnExpedienteMedico, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                    .addComponent(btnGenerarReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnExpedienteMedico, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
@@ -126,9 +127,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
                 .addComponent(btnRegistro)
                 .addGap(27, 27, 27)
                 .addComponent(btnExpedienteMedico)
-                .addGap(18, 18, 18)
-                .addComponent(btnGenerarReportes)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(348, Short.MAX_VALUE))
         );
 
         jPanel1.add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
@@ -142,35 +141,30 @@ public class RegistroMascotas extends javax.swing.JFrame {
 
         txtRaza.setBackground(new java.awt.Color(247, 247, 247));
         txtRaza.setForeground(new java.awt.Color(102, 102, 102));
-        txtRaza.setText("Raza de la mascota");
         txtRaza.setToolTipText("");
         txtRaza.setBorder(null);
         txtRaza.addActionListener(this::txtRazaActionPerformed);
 
         txtNombreMascota.setBackground(new java.awt.Color(247, 247, 247));
         txtNombreMascota.setForeground(new java.awt.Color(102, 102, 102));
-        txtNombreMascota.setText("Nombre de la mascota");
         txtNombreMascota.setToolTipText("");
         txtNombreMascota.setBorder(null);
         txtNombreMascota.addActionListener(this::txtNombreMascotaActionPerformed);
 
         txtVacunasregistrados.setBackground(new java.awt.Color(247, 247, 247));
         txtVacunasregistrados.setForeground(new java.awt.Color(102, 102, 102));
-        txtVacunasregistrados.setText("Vacunas registradas");
         txtVacunasregistrados.setToolTipText("");
         txtVacunasregistrados.setBorder(null);
         txtVacunasregistrados.addActionListener(this::txtVacunasregistradosActionPerformed);
 
         txtMedicamentosregistrados.setBackground(new java.awt.Color(247, 247, 247));
         txtMedicamentosregistrados.setForeground(new java.awt.Color(102, 102, 102));
-        txtMedicamentosregistrados.setText("Medicamentos registrados");
         txtMedicamentosregistrados.setToolTipText("");
         txtMedicamentosregistrados.setBorder(null);
         txtMedicamentosregistrados.addActionListener(this::txtMedicamentosregistradosActionPerformed);
 
         txtServiciosregistrados.setBackground(new java.awt.Color(247, 247, 247));
         txtServiciosregistrados.setForeground(new java.awt.Color(102, 102, 102));
-        txtServiciosregistrados.setText("Servicios registrados");
         txtServiciosregistrados.setToolTipText("");
         txtServiciosregistrados.setBorder(null);
         txtServiciosregistrados.addActionListener(this::txtServiciosregistradosActionPerformed);
@@ -185,35 +179,77 @@ public class RegistroMascotas extends javax.swing.JFrame {
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Nombre de la mascota");
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Raza de la mascota");
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Vacunas Registradas");
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Servicios Registrados");
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Medicamentos Registrados");
+
+        txtMedicamentosregistrados1.setBackground(new java.awt.Color(247, 247, 247));
+        txtMedicamentosregistrados1.setForeground(new java.awt.Color(102, 102, 102));
+        txtMedicamentosregistrados1.setToolTipText("");
+        txtMedicamentosregistrados1.setBorder(null);
+        txtMedicamentosregistrados1.addActionListener(this::txtMedicamentosregistrados1ActionPerformed);
+
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Numero de telefono del dueño");
+
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
         RegistroMascotasCentroLayout.setHorizontalGroup(
             RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtMedicamentosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtServiciosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(txtRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel7))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtVacunasregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel8))
+                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel9))))
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtVacunasregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtMedicamentosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtServiciosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMedicamentosregistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
@@ -221,21 +257,35 @@ public class RegistroMascotas extends javax.swing.JFrame {
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
-                .addGap(41, 41, 41)
+                .addGap(13, 13, 13)
+                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtVacunasregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addGap(5, 5, 5)
                 .addComponent(txtServiciosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtMedicamentosregistrados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtMedicamentosregistrados1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
+                .addGap(20, 20, 20))
         );
 
         jPanel1.add(RegistroMascotasCentro, java.awt.BorderLayout.CENTER);
@@ -281,9 +331,9 @@ public class RegistroMascotas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExpedienteMedicoActionPerformed
 
-    private void btnGenerarReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReportesActionPerformed
+    private void txtMedicamentosregistrados1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMedicamentosregistrados1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnGenerarReportesActionPerformed
+    }//GEN-LAST:event_txtMedicamentosregistrados1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,9 +377,6 @@ public class RegistroMascotas extends javax.swing.JFrame {
         return btnExpedienteMedico;
     }
 
-    public JButton getBtnGenerarReportes() {
-        return btnGenerarReportes;
-    }
 
     public JButton getBtnRegistro() {
         return btnRegistro;
@@ -355,6 +402,10 @@ public class RegistroMascotas extends javax.swing.JFrame {
     public JTextField getTxtServiciosregistrados() {
         return txtServiciosregistrados;
     }
+
+    public static JTextField getTxtTelefonoDuenio() {
+        return txtMedicamentosregistrados1;
+    }
     
     
  
@@ -364,16 +415,22 @@ public class RegistroMascotas extends javax.swing.JFrame {
     public static javax.swing.JButton btnAgregar;
     public static javax.swing.JButton btnCancelar;
     public static javax.swing.JButton btnExpedienteMedico;
-    public static javax.swing.JButton btnGenerarReportes;
     public static javax.swing.JButton btnRegistro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel sideBarRegistroMascotas;
     public static javax.swing.JTextField txtMedicamentosregistrados;
+    public static javax.swing.JTextField txtMedicamentosregistrados1;
     public static javax.swing.JTextField txtNombreMascota;
     public static javax.swing.JTextField txtRaza;
     public static javax.swing.JTextField txtServiciosregistrados;

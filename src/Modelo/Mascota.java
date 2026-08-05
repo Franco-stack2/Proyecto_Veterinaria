@@ -15,7 +15,7 @@ public class Mascota {
     private String servicios;
     private String medicamentos;
     private int id_mascota;
-
+    private int id_dueno;
     // Constructor vacío (por defecto)
     public Mascota() {
         this.nombreMascota = "";
@@ -84,7 +84,12 @@ public class Mascota {
         this.id_mascota = id_mascota;
     }
     
-    
+    public int getId_dueno() {
+    return id_dueno;
+    }
+    public void setId_dueno(int id_dueno) {
+    this.id_dueno = id_dueno;
+    }
     
     
 }

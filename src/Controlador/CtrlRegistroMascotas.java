@@ -8,131 +8,105 @@ import Modelo.Mascota;
 import Modelo.ConsultasMascota; 
 import Vista.RegistroMascotas; 
 import Vista.FrmExpedienteMedico; 
-import Vista.FrmGenerarcionReportes; 
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener; 
 import javax.swing.JOptionPane; 
 
+
 public class CtrlRegistroMascotas implements ActionListener { 
     
-    
-    private final Mascota modelo;
+ private final Mascota modelo;
     private final ConsultasMascota consultas; 
     private final RegistroMascotas vista; 
     
+    
     public CtrlRegistroMascotas(Mascota modelo, ConsultasMascota consultas, RegistroMascotas vista) { 
-        
         this.modelo = modelo;
         this.consultas = consultas; 
         this.vista = vista; 
 
-// Botones de la vista 
+        // Acoplamos los escuchadores a todos los botones mediante puros Getters dinámicos
         this.vista.getBtnAgregar().addActionListener(this); 
         this.vista.getBtnCancelar().addActionListener(this); 
         this.vista.getBtnExpedienteMedico().addActionListener(this); 
-        this.vista.getBtnGenerarReportes().addActionListener(this); 
-        this.vista.getBtnRegistro().addActionListener(this); } 
+        this.vista.getBtnRegistro().addActionListener(this); 
+    } 
     
     @Override 
-    
-   public void actionPerformed(ActionEvent e) { 
+    public void actionPerformed(ActionEvent e) { 
 
-// boton agregar
+
         if (e.getSource() == vista.getBtnAgregar()) { 
 
-        // Obtener los datos de la vista 
-        
-        modelo.setNombreMascota(vista.getTxtNombreMascota().getText()); 
-        modelo.setRazaMascota(vista.getTxtRaza().getText()); 
-        modelo.setVacunas(vista.getTxtVacunasregistrados().getText()); 
-        modelo.setServicios(vista.getTxtServiciosregistrados().getText()); 
-        modelo.setMedicamentos(vista.getTxtMedicamentosregistrados().getText()); 
+       
+            String telefonoInput = vista.getTxtTelefonoDuenio().getText().trim();
 
-        // Validar que los campos no estén vacíos 
-        if (modelo.getNombreMascota().isEmpty() 
+          
+            modelo.setNombreMascota(vista.getTxtNombreMascota().getText().trim()); 
+            modelo.setRazaMascota(vista.getTxtRaza().getText().trim()); 
+            modelo.setVacunas(vista.getTxtVacunasregistrados().getText().trim()); 
+            modelo.setServicios(vista.getTxtServiciosregistrados().getText().trim()); 
+            modelo.setMedicamentos(vista.getTxtMedicamentosregistrados().getText().trim()); 
+
+            // Validación estricta de campos vacíos en la interfaz
+            if (modelo.getNombreMascota().isEmpty() 
+                    || modelo.getRazaMascota().isEmpty() 
+                    || modelo.getVacunas().isEmpty() 
+                    || modelo.getServicios().isEmpty() 
+                    || modelo.getMedicamentos().isEmpty()
+                    || telefonoInput.isEmpty()) { 
                 
-                || modelo.getRazaMascota().isEmpty() 
-                || modelo.getVacunas().isEmpty() 
-                || modelo.getServicios().isEmpty() 
-                || modelo.getMedicamentos().isEmpty()) { 
+                JOptionPane.showMessageDialog(null, "Debe completar todos los campos del formulario.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+                return; 
+            }
             
-            JOptionPane.showMessageDialog( 
-                    null, 
-                    "Debe completar todos los campos.", 
-                    "Campos vacíos", 
-                    JOptionPane.WARNING_MESSAGE );
-         
-            return; 
-        }
-                // Registrar mascota en la base de datos 
-        
+      
+            int idDuenoEncontrado = consultas.buscarIdDuenoPorTelefono(telefonoInput);
+            
+            if (idDuenoEncontrado > 0) {
+     
+                modelo.setId_dueno(idDuenoEncontrado); 
+                
+           
                 if (consultas.registrar(modelo)) {
-                    
-                    JOptionPane.showMessageDialog( 
-                            null, 
-                            "Mascota registrada correctamente.", 
-                            "Registro exitoso", 
-                            JOptionPane.INFORMATION_MESSAGE 
-                    );
-                }
-                      limpiarCampos();
-                      
+                    JOptionPane.showMessageDialog(null, "Mascota registrada correctamente y enlazada a su dueño.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+                    limpiarCampos(); 
                 } else {
-            
-            
-                      JOptionPane.showMessageDialog(
-                              null,
-                              "No se pudo registrar la mascota.", 
-                              "Error", 
-                              JOptionPane.ERROR_MESSAGE
-                      );
+                    JOptionPane.showMessageDialog(null, "Error físico al intentar registrar la mascota en la base de datos.", "Error SQL", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+           
+                JOptionPane.showMessageDialog(null, "El teléfono ingresado no pertenece a ningún dueño registrado.\nPor favor, dé de alta al dueño primero.", "Dueño no encontrado", JOptionPane.ERROR_MESSAGE);
+            }
         } 
-    
- 
-    // boton cancelar
-    if (e.getSource() == vista.getBtnCancelar()) { 
-
-        limpiarCampos(); 
         
-        JOptionPane.showMessageDialog( null,
-        "Los campos fueron limpiados.",
-        "Cancelar", 
-        JOptionPane.INFORMATION_MESSAGE );
-} 
-        // boton expediente medico
-       if (e.getSource() == vista.getBtnExpedienteMedico()) {
+        if (e.getSource() == vista.getBtnCancelar()) { 
+            limpiarCampos(); 
+            JOptionPane.showMessageDialog(null, "Los campos del formulario fueron limpiados.", "Cancelar", JOptionPane.INFORMATION_MESSAGE);
+        } 
+     
+        if (e.getSource() == vista.getBtnExpedienteMedico()) {
+            FrmExpedienteMedico vistaExpedienteMedico = new FrmExpedienteMedico(); 
+            vistaExpedienteMedico.setLocationRelativeTo(null); 
+            vistaExpedienteMedico.setVisible(true); 
+            
+            this.vista.dispose(); 
+        } 
+        
 
-        FrmExpedienteMedico vistaExpedienteMedico = new FrmExpedienteMedico(); 
+        if (e.getSource() == vista.getBtnRegistro()) {
+            JOptionPane.showMessageDialog(null, "Usted ya se encuentra visualizando la sección de Registro de Mascotas.");
+        }
+    }
 
-        vistaExpedienteMedico.setLocationRelativeTo(null); 
-        vistaExpedienteMedico.setVisible(true); 
 
-        vista.dispose(); 
-
-} 
-
-    // Boton generar reportes
-    if (e.getSource() == vista.getBtnGenerarReportes()) { 
-
-    FrmGenerarcionReportes vistaGenerarReportes = new FrmGenerarcionReportes(); 
-
-    vistaGenerarReportes.setLocationRelativeTo(null); 
-    vistaGenerarReportes.setVisible(true); 
-
-    vista.dispose(); 
-} 
-    
-   }
-// limpiar campos
-   private void limpiarCampos() { 
+    private void limpiarCampos() { 
+        vista.getTxtTelefonoDuenio().setText("");
         vista.getTxtNombreMascota().setText(""); 
         vista.getTxtRaza().setText(""); 
         vista.getTxtVacunasregistrados().setText(""); 
         vista.getTxtServiciosregistrados().setText(""); 
         vista.getTxtMedicamentosregistrados().setText(""); 
-   
-}
-
-        
-}
-        
+        vista.getTxtTelefonoDuenio().requestFocus(); 
+    }
+}     

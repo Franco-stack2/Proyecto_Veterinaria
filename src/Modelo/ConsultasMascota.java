@@ -12,20 +12,27 @@ import java.sql.*;
  */
 public class ConsultasMascota extends Conexion {
 
-    public boolean registrar(Mascota mas) {
-        String sql = "INSERT INTO mascota (nombreMascota, razaMascota, vacunas, servicios, medicamentos) VALUES (?,?,?,?,?)";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(1, mas.getNombreMascota());
-            ps.setString(2, mas.getRazaMascota());
-            ps.setString(3, mas.getVacunas());
-            ps.setString(4, mas.getServicios());
-            ps.setString(5, mas.getMedicamentos());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al registrar mascota: " + e);
-            return false;
-        }
+   public boolean registrar(Mascota mas) {
+
+    String sql = "INSERT INTO mascota (nombreMascota, razaMascota, vacunas, servicios, medicamentos, id_dueno) VALUES (?, ?, ?, ?, ?, ?)";
+    
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        ps.setString(1, mas.getNombreMascota());
+        ps.setString(2, mas.getRazaMascota());
+        ps.setString(3, mas.getVacunas());
+        ps.setString(4, mas.getServicios());
+        ps.setString(5, mas.getMedicamentos());
+        ps.setInt(6, mas.getId_dueno()); 
+        
+        return ps.executeUpdate() > 0; 
+        
+    } catch (SQLException e) {
+     
+        System.err.println("Error crítico en el INSERT de la mascota: " + e.getMessage());
+        return false;
     }
+}
 
    public boolean buscar(Mascota mas) {
     String sql = "SELECT * FROM mascota WHERE id_mascota=?";
@@ -84,6 +91,71 @@ public class ConsultasMascota extends Conexion {
         return false;
     }
 }
+    public boolean buscarPorNombreMascota(Mascota mas) {
     
+    String sql = "SELECT id_mascota, razaMascota, vacunas, servicios, medicamentos FROM mascota WHERE LOWER(nombreMascota) = LOWER(?)";
+    
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, mas.getNombreMascota());
+        
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                // Restauramos tus setters originales que sí tenías bien vinculados en Java
+                mas.setId_mascota(rs.getInt("id_mascota")); 
+                mas.setRazaMascota(rs.getString("razaMascota"));
+                mas.setVacunas(rs.getString("vacunas"));
+                mas.setServicios(rs.getString("servicios")); 
+                mas.setMedicamentos(rs.getString("medicamentos"));
+                return true;
+            }
+        }
+        return false;
+    } catch (SQLException e) {
+        System.err.println("Error al buscar mascota: " + e);
+        return false;
+    }
+    
+}
+    public boolean actualizarHistorialCita(Mascota mas) {
+
+    String sql = "UPDATE mascota SET vacunas = ?, servicios = ?, medicamentos = ? WHERE id_mascota = ?";
+    
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        ps.setString(1, mas.getVacunas());
+        ps.setString(2, mas.getServicios());
+        ps.setString(3, mas.getMedicamentos());
+        
+
+        ps.setInt(4, mas.getId_mascota()); 
+        
+        return ps.executeUpdate() > 0; 
+        
+    } catch (SQLException e) {
+        System.err.println("Error al actualizar datos médicos de la mascota: " + e);
+        return false;
+    }
+}
+    public int buscarIdDuenoPorTelefono(String telefono) {
+   
+    String sql = "SELECT d.id_dueno FROM duenio d "
+               + "INNER JOIN usuario u ON d.id_usuario = u.id_usuario WHERE u.numTelefono = ?";
+    
+    try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, telefono);
+        
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt("id_dueno"); // Esto va a retornar el número 1 para Diego
+            }
+        }
+        return 0;
+    } catch (SQLException e) {
+        System.err.println("Error al buscar ID del dueño: " + e);
+        return 0;
+    }
+}
+
+
     
 }

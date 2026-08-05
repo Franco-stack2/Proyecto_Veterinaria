@@ -4,10 +4,118 @@
  */
 package Controlador;
 
-/**
- *
- * @author Usuario
- */
-public class CtrlRegistroMedicoCitas {
+
+import Modelo.Mascota;
+import Modelo.ConsultasMascota;
+import Vista.RegistroMedicoCitas; 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
+
+public class CtrlRegistroMedicoCitas  implements ActionListener {
     
+   private final Mascota modelo;
+    private final ConsultasMascota consultas;
+    private final RegistroMedicoCitas vista;
+
+    public CtrlRegistroMedicoCitas(Mascota modelo, ConsultasMascota consultas, RegistroMedicoCitas vista) {
+        this.modelo = modelo;
+        this.consultas = consultas;
+        this.vista = vista;
+
+        // 1. Escuchamos el campo de texto del nombre para la búsqueda automática al presionar ENTER
+        this.vista.getTxtNombremascota().addActionListener(this);
+        
+        // 2. Escuchamos los botones de acción mediante tus Getters reales corregidos
+        this.vista.getBtnAgregar().addActionListener(this);
+        this.vista.getBtnCancelar().addActionListener(this); 
+        
+        // 3. Escuchadores para los botones del menú lateral izquierdo (Navegación)
+        this.vista.getBtnAgendarCitas().addActionListener(this);
+        this.vista.getBtnHistorialdepaciente().addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+
+        if (e.getSource() == vista.getBtnAgendarCitas()) {
+       
+            // in process
+        }
+        
+        if (e.getSource() == vista.getBtnHistorialdepaciente()) {
+     
+            // Aquí instanciarías el controlador de Historial en el futuro
+        }
+
+  
+        if (e.getSource() == vista.getTxtNombremascota()) {
+            if (vista.getTxtNombremascota().getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese el nombre de la mascota para buscar.");
+                return;
+            }
+
+            // Pasamos el nombre escrito al modelo
+            modelo.setNombreMascota(vista.getTxtNombremascota().getText().trim());
+
+            if (consultas.buscarPorNombreMascota(modelo)) {
+                // Rellenamos las cajas de texto utilizando tus Getters exactos
+                vista.getTxtRazadelaMascota().setText(modelo.getRazaMascota());
+                vista.getTxtVacunas().setText(modelo.getVacunas());
+                vista.getTxtServicios().setText(modelo.getServicios());
+                vista.getTxtMedicamentosrecetados().setText(modelo.getMedicamentos());
+                
+                JOptionPane.showMessageDialog(null, "¡Paciente localizado! Historial cargado.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró ninguna mascota registrada con ese nombre.");
+                limpiar();
+            }
+        }
+
+        
+        
+        
+        // aqui viene la logica del update
+        if (e.getSource() == vista.getBtnAgregar()) {
+            
+  
+            
+            if (modelo.getId_mascota() == 0) {
+                JOptionPane.showMessageDialog(null, "Por favor, busque primero una mascota válida presionando Enter en su nombre.");
+                return;
+            }
+
+            // Recolectamos las modificaciones de la interfaz mediante los Getters finales
+            modelo.setVacunas(vista.getTxtVacunas().getText().trim());
+            modelo.setServicios(vista.getTxtServicios().getText().trim());
+            modelo.setMedicamentos(vista.getTxtMedicamentosrecetados().getText().trim());
+
+            // Ejecutamos el UPDATE en MySQL apuntando a la llave primaria
+            if (consultas.actualizarHistorialCita(modelo)) {
+                JOptionPane.showMessageDialog(null, "¡Registro médico actualizado con éxito!");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al guardar los datos médicos en la base de datos.");
+            }
+        }
+
+
+        if (e.getSource() == vista.getBtnCancelar()) {
+            limpiar();
+        }
+    }
+
+
+    public void limpiar() {
+        vista.getTxtNombremascota().setText("");
+        vista.getTxtRazadelaMascota().setText("");
+        vista.getTxtVacunas().setText("");
+        vista.getTxtServicios().setText("");
+        vista.getTxtMedicamentosrecetados().setText("");
+        
+        modelo.setId_mascota(0);
+        vista.getTxtNombremascota().requestFocus(); 
+    }
 }

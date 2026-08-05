@@ -74,32 +74,48 @@ public class CtrlInicioSesion implements ActionListener {
             }
             
             
-            //cuando un administrador hace inicio de sesion hay que corregir esto 
+    
             else if (rol.equalsIgnoreCase("Administrador")){
-                Vista.FrmRegistro vistaRegistro = new Vista.FrmRegistro();
-                Modelo.Cita modeloCita = new Modelo.Cita();
-                Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
-                
-                Recursos.CtrlRegistro ctrlRegistro = new Recursos.CtrlRegistro(modeloCita, consultasCita, vistaRegistro);
-                
-                vistaRegistro.setLocationRelativeTo(null);
-                vistaRegistro.setVisible(true);
-                
-                vista.dispose(); // esto cierra el login en el que estabamos
-            }
+     
+    
+            Vista.RegistroMascotas vistaRegistroMas = new Vista.RegistroMascotas();
+    
+    
+            Modelo.Mascota modeloMascota = new Modelo.Mascota();
+            Modelo.ConsultasMascota consultasMascota = new Modelo.ConsultasMascota();
+    
+  
+            Controlador.CtrlRegistroMascotas ctrlMascotas = new Controlador.CtrlRegistroMascotas(
+            modeloMascota, 
+            consultasMascota, 
+            vistaRegistroMas
+            );
+    
+   
+            vistaRegistroMas.setLocationRelativeTo(null);
+            vistaRegistroMas.setVisible(true);
+    
+    
+            vista.dispose(); 
+            } 
+           
             
             //cuando un veterinario hace inicio de sesion
             else if (rol.equalsIgnoreCase("Veterinario")){
-                Vista.RegistroMedicoCitas vistaMedicoCitas = new Vista.RegistroMedicoCitas();
-                Modelo.Cita modeloCita = new Modelo.Cita();
-                Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
+                 Vista.RegistroMedicoCitas vistaMedicoCitas = new Vista.RegistroMedicoCitas();
+    
+         
+                Modelo.Mascota modeloMascota = new Modelo.Mascota();
+                Modelo.ConsultasMascota consultasMascota = new Modelo.ConsultasMascota();
+    
+           
+                Controlador.CtrlRegistroMedicoCitas ctrlMedico = new Controlador.CtrlRegistroMedicoCitas( modeloMascota, consultasMascota, vistaMedicoCitas);
+    
+    
+                 vistaMedicoCitas.setLocationRelativeTo(null);
+                 vistaMedicoCitas.setVisible(true);
                 
-                Controlador.CtrlRegistroMedicoCitas ctrlRegistroMedicoCitas = new Controlador.CtrlRegistroMedicoCitas(modeloCita, consultasCita, vistaRegistro);
-                
-                vistaMedicoCitas.setLocationRelativeTo(null);
-                vistaMedicoCitas.setVisible(true);
-                
-                vista.dispose(); // esto cierra el login en el que estabamos
+                vista.dispose();
             }
          
 

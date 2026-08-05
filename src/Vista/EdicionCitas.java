@@ -96,13 +96,11 @@ public class EdicionCitas extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        BtnMenuAvisos.setBackground(new java.awt.Color(255, 204, 204));
-        BtnMenuAvisos.setForeground(new java.awt.Color(0, 0, 0));
+        BtnMenuAvisos.setBackground(new java.awt.Color(102, 102, 102));
         BtnMenuAvisos.setText("Avisos");
         BtnMenuAvisos.addActionListener(this::BtnMenuAvisosActionPerformed);
 
-        btnCitas.setBackground(new java.awt.Color(255, 204, 204));
-        btnCitas.setForeground(new java.awt.Color(0, 0, 0));
+        btnCitas.setBackground(new java.awt.Color(102, 102, 102));
         btnCitas.setText("Citas");
         btnCitas.addActionListener(this::btnCitasActionPerformed);
 
