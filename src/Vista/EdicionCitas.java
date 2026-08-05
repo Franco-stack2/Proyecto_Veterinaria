@@ -42,12 +42,12 @@ public class EdicionCitas extends javax.swing.JFrame {
         btnCitas = new javax.swing.JButton();
         RegistroMascotasCentro = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        TxtFechaHora = new javax.swing.JTextField();
+        inputFecha = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        TxtIdCita = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        inputNumCita = new javax.swing.JTextField();
+        txtNumCita = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +75,7 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,12 +91,18 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel4, java.awt.BorderLayout.PAGE_START);
+
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
+        BtnMenuAvisos.setBackground(new java.awt.Color(255, 204, 204));
+        BtnMenuAvisos.setForeground(new java.awt.Color(0, 0, 0));
         BtnMenuAvisos.setText("Avisos");
         BtnMenuAvisos.addActionListener(this::BtnMenuAvisosActionPerformed);
 
+        btnCitas.setBackground(new java.awt.Color(255, 204, 204));
+        btnCitas.setForeground(new java.awt.Color(0, 0, 0));
         btnCitas.setText("Citas");
         btnCitas.addActionListener(this::btnCitasActionPerformed);
 
@@ -118,8 +124,10 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addComponent(btnCitas)
                 .addGap(18, 18, 18)
                 .addComponent(BtnMenuAvisos)
-                .addContainerGap(307, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
+
+        getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
 
         RegistroMascotasCentro.setBackground(new java.awt.Color(255, 255, 255));
         RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(30, 350));
@@ -129,11 +137,11 @@ public class EdicionCitas extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Reprogramar o cancelar cita");
 
-        TxtFechaHora.setBackground(new java.awt.Color(247, 247, 247));
-        TxtFechaHora.setForeground(new java.awt.Color(102, 102, 102));
-        TxtFechaHora.setToolTipText("");
-        TxtFechaHora.setBorder(null);
-        TxtFechaHora.addActionListener(this::TxtFechaHoraActionPerformed);
+        inputFecha.setBackground(new java.awt.Color(247, 247, 247));
+        inputFecha.setForeground(new java.awt.Color(102, 102, 102));
+        inputFecha.setToolTipText("");
+        inputFecha.setBorder(null);
+        inputFecha.addActionListener(this::inputFechaActionPerformed);
 
         btnAgregar.setBackground(new java.awt.Color(143, 175, 148));
         btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
@@ -147,15 +155,17 @@ public class EdicionCitas extends javax.swing.JFrame {
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
-        TxtIdCita.setBackground(new java.awt.Color(247, 247, 247));
-        TxtIdCita.setForeground(new java.awt.Color(102, 102, 102));
-        TxtIdCita.setToolTipText("");
-        TxtIdCita.setBorder(null);
-        TxtIdCita.addActionListener(this::TxtIdCitaActionPerformed);
+        inputNumCita.setBackground(new java.awt.Color(247, 247, 247));
+        inputNumCita.setForeground(new java.awt.Color(102, 102, 102));
+        inputNumCita.setToolTipText("");
+        inputNumCita.setBorder(null);
+        inputNumCita.addActionListener(this::inputNumCitaActionPerformed);
 
-        jLabel5.setText("Numero de cita");
+        txtNumCita.setForeground(new java.awt.Color(0, 0, 0));
+        txtNumCita.setText("Numero de cita");
 
-        jLabel6.setText("Fecha y hora");
+        txtFecha.setForeground(new java.awt.Color(0, 0, 0));
+        txtFecha.setText("Fecha y hora");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
@@ -168,19 +178,19 @@ public class EdicionCitas extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addGap(162, 162, 162)
+                        .addGap(159, 159, 159)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(43, Short.MAX_VALUE)
                         .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputNumCita, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel6))
-                            .addComponent(jLabel5))))
+                                .addComponent(txtFecha))
+                            .addComponent(txtNumCita))))
                 .addGap(49, 49, 49))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
@@ -189,47 +199,21 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
                 .addGap(29, 29, 29)
-                .addComponent(jLabel5)
+                .addComponent(txtNumCita)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TxtIdCita, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputNumCita, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
-                .addComponent(jLabel6)
+                .addComponent(txtFecha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtFechaHora, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(105, 105, 105))
+                .addGap(41, 41, 41))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 144, Short.MAX_VALUE)
-                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 70, Short.MAX_VALUE)
-                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        getContentPane().add(RegistroMascotasCentro, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -246,13 +230,13 @@ public class EdicionCitas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnMenuAvisosActionPerformed
 
-    private void TxtIdCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtIdCitaActionPerformed
+    private void inputNumCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumCitaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtIdCitaActionPerformed
+    }//GEN-LAST:event_inputNumCitaActionPerformed
 
-    private void TxtFechaHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFechaHoraActionPerformed
+    private void inputFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtFechaHoraActionPerformed
+    }//GEN-LAST:event_inputFechaActionPerformed
 
     private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitasActionPerformed
         // TODO add your handling code here:
@@ -288,11 +272,11 @@ public class EdicionCitas extends javax.swing.JFrame {
     }
 
     public JTextField getTxtFechaHora() {
-        return TxtFechaHora;
+        return inputFecha;
     }
 
     public JTextField getTxtIdCita() {
-        return TxtIdCita;
+        return inputNumCita;
     }
 
     public JButton getBtnAgregar() {
@@ -309,18 +293,18 @@ public class EdicionCitas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton BtnMenuAvisos;
     private javax.swing.JPanel RegistroMascotasCentro;
-    public static javax.swing.JTextField TxtFechaHora;
-    public static javax.swing.JTextField TxtIdCita;
     public static transient javax.swing.JButton btnAgregar;
     public static javax.swing.JButton btnCancelar;
     public static javax.swing.JButton btnCitas;
+    public static javax.swing.JTextField inputFecha;
+    public static javax.swing.JTextField inputNumCita;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel sideBarRegistroMascotas;
+    private javax.swing.JLabel txtFecha;
+    private javax.swing.JLabel txtNumCita;
     // End of variables declaration//GEN-END:variables
 }
