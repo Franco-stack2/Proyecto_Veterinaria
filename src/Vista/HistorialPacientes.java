@@ -125,7 +125,7 @@ public class HistorialPacientes extends javax.swing.JFrame {
         getContentPane().add(jPanel9, java.awt.BorderLayout.NORTH);
 
         RegistroMascotasCentro.setBackground(new java.awt.Color(255, 255, 255));
-        RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(30, 350));
+        RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(500, 700));
 
         jLabel19.setBackground(new java.awt.Color(0, 0, 0));
         jLabel19.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
