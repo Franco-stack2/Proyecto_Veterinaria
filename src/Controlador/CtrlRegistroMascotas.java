@@ -25,7 +25,7 @@ public class CtrlRegistroMascotas implements ActionListener {
         this.consultas = consultas; 
         this.vista = vista; 
 
-        // Acoplamos los escuchadores a todos los botones mediante puros Getters dinámicos
+       
         this.vista.getBtnAgregar().addActionListener(this); 
         this.vista.getBtnCancelar().addActionListener(this); 
         this.vista.getBtnExpedienteMedico().addActionListener(this); 
@@ -48,7 +48,7 @@ public class CtrlRegistroMascotas implements ActionListener {
             modelo.setServicios(vista.getTxtServiciosregistrados().getText().trim()); 
             modelo.setMedicamentos(vista.getTxtMedicamentosregistrados().getText().trim()); 
 
-            // Validación estricta de campos vacíos en la interfaz
+    
             if (modelo.getNombreMascota().isEmpty() 
                     || modelo.getRazaMascota().isEmpty() 
                     || modelo.getVacunas().isEmpty() 

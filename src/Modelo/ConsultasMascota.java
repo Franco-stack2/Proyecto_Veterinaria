@@ -146,7 +146,7 @@ public class ConsultasMascota extends Conexion {
         
         try (ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
-                return rs.getInt("id_dueno"); // Esto va a retornar el número 1 para Diego
+                return rs.getInt("id_dueno");
             }
         }
         return 0;

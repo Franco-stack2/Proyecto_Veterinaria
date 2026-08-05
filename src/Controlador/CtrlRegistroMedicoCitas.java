@@ -24,14 +24,14 @@ public class CtrlRegistroMedicoCitas  implements ActionListener {
         this.consultas = consultas;
         this.vista = vista;
 
-        // 1. Escuchamos el campo de texto del nombre para la búsqueda automática al presionar ENTER
+        
         this.vista.getTxtNombremascota().addActionListener(this);
         
-        // 2. Escuchamos los botones de acción mediante tus Getters reales corregidos
+
         this.vista.getBtnAgregar().addActionListener(this);
         this.vista.getBtnCancelar().addActionListener(this); 
         
-        // 3. Escuchadores para los botones del menú lateral izquierdo (Navegación)
+
         this.vista.getBtnAgendarCitas().addActionListener(this);
         this.vista.getBtnHistorialdepaciente().addActionListener(this);
     }
@@ -47,7 +47,7 @@ public class CtrlRegistroMedicoCitas  implements ActionListener {
         
         if (e.getSource() == vista.getBtnHistorialdepaciente()) {
      
-            // Aquí instanciarías el controlador de Historial en el futuro
+     
         }
 
   
@@ -57,11 +57,11 @@ public class CtrlRegistroMedicoCitas  implements ActionListener {
                 return;
             }
 
-            // Pasamos el nombre escrito al modelo
+      
             modelo.setNombreMascota(vista.getTxtNombremascota().getText().trim());
 
             if (consultas.buscarPorNombreMascota(modelo)) {
-                // Rellenamos las cajas de texto utilizando tus Getters exactos
+          
                 vista.getTxtRazadelaMascota().setText(modelo.getRazaMascota());
                 vista.getTxtVacunas().setText(modelo.getVacunas());
                 vista.getTxtServicios().setText(modelo.getServicios());
@@ -77,7 +77,7 @@ public class CtrlRegistroMedicoCitas  implements ActionListener {
         
         
         
-        // aqui viene la logica del update
+ 
         if (e.getSource() == vista.getBtnAgregar()) {
             
   
@@ -87,12 +87,12 @@ public class CtrlRegistroMedicoCitas  implements ActionListener {
                 return;
             }
 
-            // Recolectamos las modificaciones de la interfaz mediante los Getters finales
+         
             modelo.setVacunas(vista.getTxtVacunas().getText().trim());
             modelo.setServicios(vista.getTxtServicios().getText().trim());
             modelo.setMedicamentos(vista.getTxtMedicamentosrecetados().getText().trim());
 
-            // Ejecutamos el UPDATE en MySQL apuntando a la llave primaria
+       
             if (consultas.actualizarHistorialCita(modelo)) {
                 JOptionPane.showMessageDialog(null, "¡Registro médico actualizado con éxito!");
                 limpiar();
