@@ -133,7 +133,7 @@ public class RegistroMascotas extends javax.swing.JFrame {
         jPanel1.add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
 
         RegistroMascotasCentro.setBackground(new java.awt.Color(255, 255, 255));
-        RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(30, 350));
+        RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(400, 500));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
