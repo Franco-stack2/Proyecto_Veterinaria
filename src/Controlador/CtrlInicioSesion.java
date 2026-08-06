@@ -70,7 +70,7 @@ public class CtrlInicioSesion implements ActionListener {
                 vistaCitas.setLocationRelativeTo(null);
                 vistaCitas.setVisible(true);
                 
-                vista.dispose(); // esto cierra el login en el que estabamos
+                vista.dispose(); 
             }
             
             

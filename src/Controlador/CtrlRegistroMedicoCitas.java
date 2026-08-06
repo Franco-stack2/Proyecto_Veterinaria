@@ -45,7 +45,7 @@ public class CtrlRegistroMedicoCitas implements ActionListener {
             Modelo.ConsultasCita consultasCita = new Modelo.ConsultasCita();
             Vista.AgendarCita vistaAgendar = new Vista.AgendarCita();
             
-            // Llama al constructor tradicional de 3 parámetros limpios que acabamos de normalizar
+            
             Controlador.CtrlAgendarCita ctrlAgendar = new Controlador.CtrlAgendarCita(modeloCita, consultasCita, vistaAgendar);
             
             vistaAgendar.setLocationRelativeTo(null);
