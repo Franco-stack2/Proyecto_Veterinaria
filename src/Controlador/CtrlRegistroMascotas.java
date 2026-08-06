@@ -86,16 +86,29 @@ public class CtrlRegistroMascotas implements ActionListener {
         } 
      
         if (e.getSource() == vista.getBtnExpedienteMedico()) {
-            FrmExpedienteMedico vistaExpedienteMedico = new FrmExpedienteMedico(); 
-            vistaExpedienteMedico.setLocationRelativeTo(null); 
-            vistaExpedienteMedico.setVisible(true); 
-            
-            this.vista.dispose(); 
-        } 
+  
+    FrmExpedienteMedico vistaExpedienteMedico = new FrmExpedienteMedico(); 
+    
+   
+    Modelo.Expediente modeloExp = new Modelo.Expediente();
+    Modelo.ConsultasExpediente consultasExp = new Modelo.ConsultasExpediente();
+    
+
+    Controlador.CtrlExpedienteMedico ctrlExp = new Controlador.CtrlExpedienteMedico(
+        modeloExp, 
+        consultasExp, 
+        vistaExpedienteMedico
+    );
+    
+    vistaExpedienteMedico.setLocationRelativeTo(null); 
+    vistaExpedienteMedico.setVisible(true); 
+    
+    this.vista.dispose(); 
+}
         
 
         if (e.getSource() == vista.getBtnRegistro()) {
-            JOptionPane.showMessageDialog(null, "Usted ya se encuentra visualizando la sección de Registro de Mascotas.");
+ 
         }
     }
 

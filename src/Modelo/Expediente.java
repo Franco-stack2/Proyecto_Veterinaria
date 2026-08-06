@@ -14,7 +14,9 @@ public class Expediente {
     private String contactoEmergencia;
     private String condicionesPasadas;
     private String alergias;
-
+     private int Id_mascota;
+    
+    
     // Constructor vacío
     public Expediente() {
         this.idExpediente = 0;
@@ -74,5 +76,16 @@ public class Expediente {
     public void setAlergias(String alergias) {
         this.alergias = alergias;
     }
+
+    public int getId_mascota() {
+        return Id_mascota;
+    }
+
+    public void setId_mascota(int Id_mascota) {
+        this.Id_mascota = Id_mascota;
+    }
   
+    
+    
+    
 }

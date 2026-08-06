@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author alfar
@@ -175,12 +178,12 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
                                 .addComponent(btnAnadir))
                             .addComponent(txtNombreMascota)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumEmergencia)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCondicionesPasadas)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -249,6 +252,44 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistroActionPerformed
 
+    public JButton getBtnAnadir() {
+        return btnAnadir;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public JButton getBtnExpedienteMedico() {
+        return btnExpedienteMedico;
+    }
+
+    public JButton getBtnRegistro() {
+        return btnRegistro;
+    }
+
+    public JTextField getTxtAlergias() {
+        return txtAlergias;
+    }
+
+    public JTextField getTxtCondicionesPasadas() {
+        return txtCondicionesPasadas;
+    }
+
+    public JTextField getTxtNombreMascota() {
+        return txtNombreMascota;
+    }
+
+    public JTextField getTxtNumEmergencia() {
+        return txtNumEmergencia;
+    }
+
+    
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */

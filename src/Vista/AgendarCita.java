@@ -4,6 +4,10 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author vaneu
@@ -37,10 +41,12 @@ public class AgendarCita extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtFechayHora = new javax.swing.JTextField();
         cmbTipoCita = new javax.swing.JComboBox<>();
         btnCancelar = new javax.swing.JButton();
         btnAgendar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtNumerodeCita = new javax.swing.JTextField();
+        txtFechayHora = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,7 +64,7 @@ public class AgendarCita extends javax.swing.JFrame {
         btnAgendarCitas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAgendarCitas.addActionListener(this::btnAgendarCitasActionPerformed);
 
-        btnConsultarHistorialPacientes.setText("Consultar historial del paciente");
+        btnConsultarHistorialPacientes.setText("historial del paciente");
         btnConsultarHistorialPacientes.setBorder(null);
         btnConsultarHistorialPacientes.addActionListener(this::btnConsultarHistorialPacientesActionPerformed);
 
@@ -101,8 +107,6 @@ public class AgendarCita extends javax.swing.JFrame {
 
         jLabel4.setText("Tipo de cita");
 
-        txtFechayHora.addActionListener(this::txtFechayHoraActionPerformed);
-
         cmbTipoCita.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------", "Vacunacion", "Control Medico", "Tratamientos" }));
         cmbTipoCita.addActionListener(this::cmbTipoCitaActionPerformed);
 
@@ -115,6 +119,13 @@ public class AgendarCita extends javax.swing.JFrame {
         btnAgendar.setText("Agendar");
         btnAgendar.addActionListener(this::btnAgendarActionPerformed);
 
+        jLabel5.setText("Numero de la cita:");
+
+        txtNumerodeCita.setEditable(false);
+        txtNumerodeCita.addActionListener(this::txtNumerodeCitaActionPerformed);
+
+        txtFechayHora.addActionListener(this::txtFechayHoraActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,12 +133,6 @@ public class AgendarCita extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addComponent(btnCancelar)
-                        .addGap(64, 64, 64)
-                        .addComponent(btnAgendar)
-                        .addGap(54, 54, 54))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -137,13 +142,25 @@ public class AgendarCita extends javax.swing.JFrame {
                                 .addGap(52, 52, 52)
                                 .addComponent(jLabel1))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechayHora)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cmbTipoCita, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNumerodeCita, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(14, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancelar)
+                        .addGap(64, 64, 64)
+                        .addComponent(btnAgendar)
+                        .addGap(54, 54, 54))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFechayHora)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTipoCita, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,15 +169,19 @@ public class AgendarCita extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(44, 44, 44)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtFechayHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cmbTipoCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(172, 172, 172)
+                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtNumerodeCita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnAgendar))
@@ -182,10 +203,6 @@ public class AgendarCita extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarHistorialPacientesActionPerformed
 
-    private void txtFechayHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechayHoraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechayHoraActionPerformed
-
     private void cmbTipoCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoCitaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTipoCitaActionPerformed
@@ -193,6 +210,14 @@ public class AgendarCita extends javax.swing.JFrame {
     private void btnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgendarActionPerformed
+
+    private void txtNumerodeCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumerodeCitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumerodeCitaActionPerformed
+
+    private void txtFechayHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechayHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechayHoraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +244,46 @@ public class AgendarCita extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new AgendarCita().setVisible(true));
     }
 
+    public static JButton getBtnAgendar() {
+        return btnAgendar;
+    }
+
+    public static JButton getBtnAgendarCitas() {
+        return btnAgendarCitas;
+    }
+
+    public static JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public static JButton getBtnConsultarHistorialPacientes() {
+        return btnConsultarHistorialPacientes;
+    }
+
+    public static JButton getBtnRegistrosMedicosCitas() {
+        return btnRegistrosMedicosCitas;
+    }
+
+    public static JComboBox<String> getCmbTipoCita() {
+        return cmbTipoCita;
+    }
+
+ 
+    public JTextField getTxtNumerodeCita() {
+        return txtNumerodeCita;
+    }
+
+    public static JTextField getTxtFechayHora() {
+        return txtFechayHora;
+    }
+
+  
+    
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton btnAgendar;
     public static javax.swing.JButton btnAgendarCitas;
@@ -230,8 +295,10 @@ public class AgendarCita extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JTextField txtFechayHora;
+    private javax.swing.JTextField txtNumerodeCita;
     // End of variables declaration//GEN-END:variables
 }

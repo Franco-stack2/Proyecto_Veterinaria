@@ -46,12 +46,12 @@
                           </Group>
                           <Component id="txtNombreMascota" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="135" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                           <Component id="txtNumEmergencia" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jLabel5" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                           <Component id="txtCondicionesPasadas" max="32767" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
                           <Component id="txtAlergias" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                          <Component id="jLabel4" alignment="0" min="-2" pref="241" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

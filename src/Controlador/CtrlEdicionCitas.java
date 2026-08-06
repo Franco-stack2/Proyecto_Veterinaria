@@ -43,7 +43,7 @@ public class CtrlEdicionCitas implements ActionListener {
             vistaAvisos.setLocationRelativeTo(null);
             vistaAvisos.setVisible(true);
             
-            this.vista.dispose(); // Cerramos la ventana de citas actual de forma limpia
+            this.vista.dispose();
         }
 
     

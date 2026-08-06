@@ -57,8 +57,8 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(850, 800));
-        setPreferredSize(new java.awt.Dimension(850, 720));
+        setMinimumSize(new java.awt.Dimension(200, 200));
+        setPreferredSize(new java.awt.Dimension(600, 500));
         setResizable(false);
 
         navbarRegistroCitas.setBackground(new java.awt.Color(255, 255, 255));

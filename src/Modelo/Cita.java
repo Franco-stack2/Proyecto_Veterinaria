@@ -15,7 +15,12 @@ public class Cita {
     private String tipoCita;
     private Usuario usuario;
     private Mascota mascota;
+    private int Id_mascota;
+ 
 
+    
+    
+    
     public Cita(int id_cita, String fecha, String tipoCita, Usuario usuario, Mascota mascota) {
         this.id_cita = id_cita;
         this.fecha = fecha;
@@ -71,6 +76,16 @@ public class Cita {
     public void setMascota(Mascota mascota) {
         this.mascota = mascota;
     }
+
+    public int getId_mascota() {
+        return Id_mascota;
+    }
+
+    public void setId_mascota(int Id_mascota) {
+        this.Id_mascota = Id_mascota;
+    }
+
+
     
     
     

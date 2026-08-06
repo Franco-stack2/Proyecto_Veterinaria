@@ -8,10 +8,10 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[850, 800]"/>
+      <Dimension value="[200, 200]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[850, 720]"/>
+      <Dimension value="[600, 500]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
