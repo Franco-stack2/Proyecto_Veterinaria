@@ -37,7 +37,7 @@ public class ConsultasVeterinario extends Conexion {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     vet.setId_veterinario(rs.getInt("id_veterinario"));
-                    vet.setId_usuario(rs.getInt("id_usuario")); // Mapeo directo a la variable entera
+                    vet.setId_usuario(rs.getInt("id_usuario")); 
                     return true;
                 }
             }
@@ -51,7 +51,7 @@ public class ConsultasVeterinario extends Conexion {
     public boolean modificar(Veterinario vet) {
         String sql = "UPDATE veterinario SET id_usuario=? WHERE id_veterinario=?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, vet.getId_usuario()); // Unificado para usar tu getter directo de ID entero
+            ps.setInt(1, vet.getId_usuario()); 
             ps.setInt(2, vet.getId_veterinario());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
