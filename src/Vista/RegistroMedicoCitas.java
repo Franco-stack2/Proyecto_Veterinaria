@@ -190,16 +190,16 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         jLabel5.setText("Nombre de la mascota ( presionar enter para buscar) ");
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Raza de la mascota");
+        jLabel6.setText("Raza de la mascota (editar)");
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Vacunas aplicadas");
+        jLabel7.setText("Vacunas aplicadas (editar)");
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Servicios");
+        jLabel8.setText("Servicios (editar)");
 
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Medicamentos");
+        jLabel9.setText("Medicamentos (editar)");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
         RegistroMascotasCentro.setLayout(RegistroMascotasCentroLayout);
