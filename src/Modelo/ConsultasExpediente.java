@@ -69,7 +69,7 @@ public class ConsultasExpediente extends Conexion {
         }
     }
 
-    // 4. MÉTODO ELIMINAR: Borrado directo apuntando al idExpediente autoincremental
+
     public boolean eliminar(Expediente exp) {
         String sql = "DELETE FROM expediente WHERE idExpediente = ?";
         try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {

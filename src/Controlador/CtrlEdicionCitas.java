@@ -85,7 +85,7 @@ public class CtrlEdicionCitas implements ActionListener {
                 // Pasamos el ID de la cita al modelo para el filtro DELETE
                 modelo.setId_cita(Integer.parseInt(vista.getTxtIdCita().getText().trim()));
 
-                // Ejecutamos el borrado físico en MySQL
+                
                 if (consultas.eliminar(modelo)) {
                     JOptionPane.showMessageDialog(null, "¡Su cita ha sido cancelada con éxito!");
                     limpiar();
