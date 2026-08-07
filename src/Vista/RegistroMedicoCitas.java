@@ -62,7 +62,6 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         setResizable(false);
 
         navbarRegistroCitas.setBackground(new java.awt.Color(255, 255, 255));
-        navbarRegistroCitas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         navbarRegistroCitas.setMinimumSize(new java.awt.Dimension(850, 720));
         navbarRegistroCitas.setPreferredSize(new java.awt.Dimension(532, 70));
 
@@ -79,38 +78,45 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         navbarRegistroCitasLayout.setHorizontalGroup(
             navbarRegistroCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarRegistroCitasLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         navbarRegistroCitasLayout.setVerticalGroup(
             navbarRegistroCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarRegistroCitasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(navbarRegistroCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1))
-                .addGap(19, 19, 19))
             .addGroup(navbarRegistroCitasLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(navbarRegistroCitasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(navbarRegistroCitasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(navbarRegistroCitasLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(navbarRegistroCitasLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(19, 19, 19))))
         );
 
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
+        Registro.setBackground(new java.awt.Color(204, 204, 255));
         Registro.setText("Registro medico de cita");
         Registro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Registro.addActionListener(this::RegistroActionPerformed);
 
+        btnAgendarCitas.setBackground(new java.awt.Color(204, 204, 255));
         btnAgendarCitas.setText("Agendar Citas");
+        btnAgendarCitas.setBorder(null);
         btnAgendarCitas.addActionListener(this::btnAgendarCitasActionPerformed);
 
+        btnHistorialdepaciente.setBackground(new java.awt.Color(204, 204, 255));
         btnHistorialdepaciente.setText("Historial del paciente");
         btnHistorialdepaciente.setBorder(null);
         btnHistorialdepaciente.addActionListener(this::btnHistorialdepacienteActionPerformed);
@@ -122,21 +128,21 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnHistorialdepaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Registro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAgendarCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(Registro, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                    .addComponent(btnAgendarCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHistorialdepaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(Registro)
-                .addGap(36, 36, 36)
-                .addComponent(btnAgendarCitas)
-                .addGap(35, 35, 35)
-                .addComponent(btnHistorialdepaciente)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(Registro, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnAgendarCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnHistorialdepaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         RegistroMascotasCentro.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,59 +152,49 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel4.setText("Registros medicos de citas");
 
-        txtNombremascota.setBackground(new java.awt.Color(247, 247, 247));
-        txtNombremascota.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombremascota.setBackground(new java.awt.Color(204, 204, 255));
         txtNombremascota.setToolTipText("");
         txtNombremascota.setBorder(null);
         txtNombremascota.addActionListener(this::txtNombremascotaActionPerformed);
 
-        txtServicios.setBackground(new java.awt.Color(247, 247, 247));
-        txtServicios.setForeground(new java.awt.Color(102, 102, 102));
+        txtServicios.setBackground(new java.awt.Color(204, 204, 255));
         txtServicios.setToolTipText("");
         txtServicios.setBorder(null);
         txtServicios.addActionListener(this::txtServiciosActionPerformed);
 
-        txtVacunas.setBackground(new java.awt.Color(247, 247, 247));
-        txtVacunas.setForeground(new java.awt.Color(102, 102, 102));
+        txtVacunas.setBackground(new java.awt.Color(204, 204, 255));
         txtVacunas.setToolTipText("");
         txtVacunas.setBorder(null);
         txtVacunas.addActionListener(this::txtVacunasActionPerformed);
 
-        btnAgregar.setBackground(new java.awt.Color(143, 175, 148));
-        btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnAgregar.setBackground(new java.awt.Color(0, 204, 51));
+        btnAgregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(this::btnAgregarActionPerformed);
 
-        btnCancelar.setBackground(new java.awt.Color(228, 134, 134));
-        btnCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        btnCancelar.setBackground(new java.awt.Color(255, 52, 52));
+        btnCancelar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
-        txtRazadelaMascota.setBackground(new java.awt.Color(247, 247, 247));
-        txtRazadelaMascota.setForeground(new java.awt.Color(102, 102, 102));
+        txtRazadelaMascota.setBackground(new java.awt.Color(204, 204, 255));
         txtRazadelaMascota.setToolTipText("");
         txtRazadelaMascota.setBorder(null);
         txtRazadelaMascota.addActionListener(this::txtRazadelaMascotaActionPerformed);
 
-        txtMedicamentosrecetados.setBackground(new java.awt.Color(247, 247, 247));
-        txtMedicamentosrecetados.setForeground(new java.awt.Color(102, 102, 102));
+        txtMedicamentosrecetados.setBackground(new java.awt.Color(204, 204, 255));
         txtMedicamentosrecetados.setToolTipText("");
         txtMedicamentosrecetados.setBorder(null);
         txtMedicamentosrecetados.addActionListener(this::txtMedicamentosrecetadosActionPerformed);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Nombre de la mascota ( presionar enter para buscar) ");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Raza de la mascota (editar)");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Vacunas aplicadas (editar)");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Servicios (editar)");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Medicamentos (editar)");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
@@ -216,8 +212,9 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
                         .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(26, 26, 26)
-                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(60, 60, 60)
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6))
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtVacunas, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,43 +223,46 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
                             .addComponent(txtMedicamentosrecetados))
                         .addGap(42, 42, 42))))
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                .addContainerGap(51, Short.MAX_VALUE)
+                .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(txtNombremascota, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(txtRazadelaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 45, Short.MAX_VALUE))
+                .addGap(0, 50, Short.MAX_VALUE))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
             RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtNombremascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtRazadelaMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtMedicamentosrecetados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMedicamentosrecetados, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -270,20 +270,20 @@ public class RegistroMedicoCitas extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 181, Short.MAX_VALUE)
-                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 171, Short.MAX_VALUE)
+                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(navbarRegistroCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(navbarRegistroCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sideBarRegistroMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 63, Short.MAX_VALUE)
-                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 45, Short.MAX_VALUE)
+                .addComponent(RegistroMascotasCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
