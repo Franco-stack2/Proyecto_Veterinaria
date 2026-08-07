@@ -69,7 +69,7 @@ public class CtrlAgendarCita implements ActionListener {
 
         if (e.getSource() == vista.getBtnAgendar()) {
             
-            // Validamos únicamente que la fecha y hora no estén vacías
+        
             if (vista.getTxtFechayHora().getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Por favor, ingrese la Fecha y Hora para agendar la cita.");
                 return;
@@ -79,7 +79,7 @@ public class CtrlAgendarCita implements ActionListener {
             modelo.setFecha(vista.getTxtFechayHora().getText().trim());
             modelo.setTipoCita(vista.getCmbTipoCita().getSelectedItem().toString());
 
-            // Ejecutamos el registro directo y limpio a MySQL
+          
             if (consultas.registrar(modelo)) {
                 // Recuperamos el ID autoincremental más alto asignado por la base de datos
                 int numeroCitaGenerado = consultas.obtenerUltimoIdCita();
