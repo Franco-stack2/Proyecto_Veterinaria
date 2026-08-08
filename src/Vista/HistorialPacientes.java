@@ -64,7 +64,6 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jTextArea3.setEditable(false);
         jTextArea3.setBackground(new java.awt.Color(247, 247, 247));
         jTextArea3.setColumns(20);
-        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea3.setRows(5);
         jTextArea3.setText("Alergias\n");
         jTextArea3.setBorder(null);
@@ -75,7 +74,6 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jTextArea5.setEditable(false);
         jTextArea5.setBackground(new java.awt.Color(247, 247, 247));
         jTextArea5.setColumns(20);
-        jTextArea5.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea5.setRows(5);
         jTextArea5.setText("Alergias\n");
         jTextArea5.setBorder(null);
@@ -84,12 +82,10 @@ public class HistorialPacientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel9.setPreferredSize(new java.awt.Dimension(532, 70));
 
         jLabel16.setBackground(new java.awt.Color(0, 0, 0));
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Hola, Doctor");
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoSmall.jpg"))); // NOI18N
@@ -101,26 +97,29 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(241, 241, 241)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 45, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel17)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel9, java.awt.BorderLayout.NORTH);
@@ -130,15 +129,13 @@ public class HistorialPacientes extends javax.swing.JFrame {
 
         jLabel19.setBackground(new java.awt.Color(0, 0, 0));
         jLabel19.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("Consultar Historial Paciente");
 
         jScrollPane1.setBorder(null);
 
         txtCondicionesPasadas.setEditable(false);
-        txtCondicionesPasadas.setBackground(new java.awt.Color(247, 247, 247));
+        txtCondicionesPasadas.setBackground(new java.awt.Color(204, 204, 255));
         txtCondicionesPasadas.setColumns(20);
-        txtCondicionesPasadas.setForeground(new java.awt.Color(0, 0, 0));
         txtCondicionesPasadas.setRows(5);
         txtCondicionesPasadas.setText("\n");
         txtCondicionesPasadas.setBorder(null);
@@ -147,9 +144,8 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jScrollPane2.setBorder(null);
 
         txtContactodeEmergencia.setEditable(false);
-        txtContactodeEmergencia.setBackground(new java.awt.Color(247, 247, 247));
+        txtContactodeEmergencia.setBackground(new java.awt.Color(204, 204, 255));
         txtContactodeEmergencia.setColumns(20);
-        txtContactodeEmergencia.setForeground(new java.awt.Color(0, 0, 0));
         txtContactodeEmergencia.setRows(5);
         txtContactodeEmergencia.setBorder(null);
         jScrollPane2.setViewportView(txtContactodeEmergencia);
@@ -157,34 +153,27 @@ public class HistorialPacientes extends javax.swing.JFrame {
         jScrollPane4.setBorder(null);
 
         txtAlergias.setEditable(false);
-        txtAlergias.setBackground(new java.awt.Color(247, 247, 247));
+        txtAlergias.setBackground(new java.awt.Color(204, 204, 255));
         txtAlergias.setColumns(20);
-        txtAlergias.setForeground(new java.awt.Color(0, 0, 0));
         txtAlergias.setRows(5);
         txtAlergias.setBorder(null);
         jScrollPane4.setViewportView(txtAlergias);
 
-        btnBuscar.setBackground(new java.awt.Color(143, 175, 148));
-        btnBuscar.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 0, 0));
+        btnBuscar.setBackground(new java.awt.Color(0, 204, 51));
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(this::btnBuscarActionPerformed);
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Contacto de emergencia");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Condiciones pasadas");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Alergias");
 
-        txtIngresarNombreMascota.setBackground(new java.awt.Color(247, 247, 247));
-        txtIngresarNombreMascota.setForeground(new java.awt.Color(0, 0, 0));
+        txtIngresarNombreMascota.setBackground(new java.awt.Color(204, 204, 255));
         txtIngresarNombreMascota.setBorder(null);
         txtIngresarNombreMascota.addActionListener(this::txtIngresarNombreMascotaActionPerformed);
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Ingrese el nombre de la mascota");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
@@ -193,28 +182,27 @@ public class HistorialPacientes extends javax.swing.JFrame {
             RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBuscar)
-                    .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtIngresarNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
-                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(51, 51, 51))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIngresarNombreMascota))
+                .addContainerGap(109, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBuscar)
+                .addGap(86, 86, 86))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
             RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel19)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIngresarNombreMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,9 +218,9 @@ public class HistorialPacientes extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(41, 41, 41)
                 .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
+                .addGap(119, 119, 119))
         );
 
         getContentPane().add(RegistroMascotasCentro, java.awt.BorderLayout.CENTER);
@@ -240,14 +228,17 @@ public class HistorialPacientes extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
+        btnRegistrosMedicosCitas.setBackground(new java.awt.Color(204, 204, 255));
         btnRegistrosMedicosCitas.setText("Registro medico de cita");
         btnRegistrosMedicosCitas.setBorder(null);
         btnRegistrosMedicosCitas.addActionListener(this::btnRegistrosMedicosCitasActionPerformed);
 
+        btnAgendarcitas.setBackground(new java.awt.Color(204, 204, 255));
         btnAgendarcitas.setText("Agendar Citas");
         btnAgendarcitas.setBorder(null);
         btnAgendarcitas.addActionListener(this::btnAgendarcitasActionPerformed);
 
+        btnHistorialPaciente.setBackground(new java.awt.Color(204, 204, 255));
         btnHistorialPaciente.setText("Historial de paciente");
         btnHistorialPaciente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnHistorialPaciente.addActionListener(this::btnHistorialPacienteActionPerformed);
@@ -258,22 +249,21 @@ public class HistorialPacientes extends javax.swing.JFrame {
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnHistorialPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistrosMedicosCitas, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                     .addComponent(btnAgendarcitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRegistrosMedicosCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnHistorialPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(btnRegistrosMedicosCitas)
-                .addGap(18, 18, 18)
-                .addComponent(btnAgendarcitas)
-                .addGap(18, 18, 18)
-                .addComponent(btnHistorialPaciente)
-                .addContainerGap(521, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(btnRegistrosMedicosCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnAgendarcitas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(btnHistorialPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(531, Short.MAX_VALUE))
         );
 
         getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
