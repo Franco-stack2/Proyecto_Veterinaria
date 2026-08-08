@@ -37,6 +37,7 @@ public class EdicionCitas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         sideBarRegistroMascotas = new javax.swing.JPanel();
         BtnMenuAvisos = new javax.swing.JButton();
         btnCitas = new javax.swing.JButton();
@@ -52,43 +53,50 @@ public class EdicionCitas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setPreferredSize(new java.awt.Dimension(532, 70));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Hola, Dueño");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoSmall.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setToolTipText("");
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoSmall.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, java.awt.BorderLayout.PAGE_START);
@@ -96,12 +104,14 @@ public class EdicionCitas extends javax.swing.JFrame {
         sideBarRegistroMascotas.setBackground(new java.awt.Color(255, 255, 250));
         sideBarRegistroMascotas.setPreferredSize(new java.awt.Dimension(150, 350));
 
-        BtnMenuAvisos.setBackground(new java.awt.Color(102, 102, 102));
+        BtnMenuAvisos.setBackground(new java.awt.Color(204, 204, 255));
         BtnMenuAvisos.setText("Avisos");
+        BtnMenuAvisos.setBorder(null);
         BtnMenuAvisos.addActionListener(this::BtnMenuAvisosActionPerformed);
 
-        btnCitas.setBackground(new java.awt.Color(102, 102, 102));
+        btnCitas.setBackground(new java.awt.Color(204, 204, 255));
         btnCitas.setText("Citas");
+        btnCitas.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCitas.addActionListener(this::btnCitasActionPerformed);
 
         javax.swing.GroupLayout sideBarRegistroMascotasLayout = new javax.swing.GroupLayout(sideBarRegistroMascotas);
@@ -111,58 +121,50 @@ public class EdicionCitas extends javax.swing.JFrame {
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BtnMenuAvisos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(btnCitas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BtnMenuAvisos, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         sideBarRegistroMascotasLayout.setVerticalGroup(
             sideBarRegistroMascotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sideBarRegistroMascotasLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btnCitas)
-                .addGap(18, 18, 18)
-                .addComponent(BtnMenuAvisos)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(btnCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(BtnMenuAvisos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         getContentPane().add(sideBarRegistroMascotas, java.awt.BorderLayout.WEST);
 
-        RegistroMascotasCentro.setBackground(new java.awt.Color(255, 255, 255));
         RegistroMascotasCentro.setPreferredSize(new java.awt.Dimension(30, 350));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Reprogramar o cancelar cita");
 
-        inputFecha.setBackground(new java.awt.Color(247, 247, 247));
-        inputFecha.setForeground(new java.awt.Color(102, 102, 102));
+        inputFecha.setBackground(new java.awt.Color(204, 204, 255));
         inputFecha.setToolTipText("");
         inputFecha.setBorder(null);
         inputFecha.addActionListener(this::inputFechaActionPerformed);
 
-        btnAgregar.setBackground(new java.awt.Color(143, 175, 148));
+        btnAgregar.setBackground(new java.awt.Color(0, 204, 51));
         btnAgregar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(0, 0, 0));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(this::btnAgregarActionPerformed);
 
-        btnCancelar.setBackground(new java.awt.Color(228, 134, 134));
+        btnCancelar.setBackground(new java.awt.Color(255, 52, 52));
         btnCancelar.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        btnCancelar.setForeground(new java.awt.Color(0, 0, 0));
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(this::btnCancelarActionPerformed);
 
-        inputNumCita.setBackground(new java.awt.Color(247, 247, 247));
-        inputNumCita.setForeground(new java.awt.Color(102, 102, 102));
+        inputNumCita.setBackground(new java.awt.Color(204, 204, 255));
         inputNumCita.setToolTipText("");
         inputNumCita.setBorder(null);
         inputNumCita.addActionListener(this::inputNumCitaActionPerformed);
 
-        txtNumCita.setForeground(new java.awt.Color(0, 0, 0));
         txtNumCita.setText("Numero de cita");
 
-        txtFecha.setForeground(new java.awt.Color(0, 0, 0));
         txtFecha.setText("Fecha y hora");
 
         javax.swing.GroupLayout RegistroMascotasCentroLayout = new javax.swing.GroupLayout(RegistroMascotasCentro);
@@ -174,21 +176,19 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroMascotasCentroLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(60, 60, 60)
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                        .addContainerGap(43, Short.MAX_VALUE)
-                        .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputNumCita, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(txtFecha))
-                            .addComponent(txtNumCita))))
+                    .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(inputNumCita, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(RegistroMascotasCentroLayout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(txtFecha))
+                        .addComponent(txtNumCita)))
                 .addGap(49, 49, 49))
         );
         RegistroMascotasCentroLayout.setVerticalGroup(
@@ -204,10 +204,10 @@ public class EdicionCitas extends javax.swing.JFrame {
                 .addComponent(txtFecha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addGroup(RegistroMascotasCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41))
         );
 
@@ -300,6 +300,7 @@ public class EdicionCitas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel sideBarRegistroMascotas;
     private javax.swing.JLabel txtFecha;
