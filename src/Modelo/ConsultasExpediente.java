@@ -22,7 +22,7 @@ public class ConsultasExpediente extends Conexion {
             ps.setString(3, exp.getCondicionesPasadas());
             ps.setString(4, exp.getAlergias());
             
-            return ps.executeUpdate() > 0; // Inserta el expediente en un milisegundo sin bloqueos relacionales
+            return ps.executeUpdate() > 0; 
         } catch (SQLException e) {
             System.err.println("Error físico al registrar expediente en MySQL: " + e);
             return false;
