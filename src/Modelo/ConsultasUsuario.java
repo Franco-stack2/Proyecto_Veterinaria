@@ -81,22 +81,7 @@ public class ConsultasUsuario extends Conexion {
         }
     }
 
-    public boolean modificar(Usuario usu) {
-        String sql = "UPDATE usuario SET "
-                + "nombre=?, numTelefono=?, contrasena=?, TipoUsuario=? "
-                + "WHERE id_usuario=?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setString(1, usu.getNombre());
-            ps.setString(2, usu.getNumTelefono());
-            ps.setString(3, usu.getContrasena());
-            ps.setString(4, usu.getTipoUsuario());
-            ps.setInt(5, usu.getId_usuario());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al modificar usuario: " + e);
-            return false;
-        }
-    }
+ 
 
     public boolean eliminar(Usuario usu) {
         String sql = "DELETE FROM usuario WHERE id_usuario=?";
@@ -111,7 +96,7 @@ public class ConsultasUsuario extends Conexion {
     
     public String obtenerAvisosPlataforma() { 
     StringBuilder listado = new StringBuilder();
-    String sql = "SELECT titulo, contenido FROM avisos ORDER BY id_aviso DESC"; 
+    String sql = "SELECT titulo, contenido FROM avisos ORDER BY id_aviso DESC"; // se agarran los avisos y se ordenan de manera descendiente
     
     try (Connection con = getConexion(); 
          PreparedStatement ps = con.prepareStatement(sql); 
@@ -120,7 +105,7 @@ public class ConsultasUsuario extends Conexion {
         while (rs.next()) {
             listado.append("📢 ").append(rs.getString("titulo").toUpperCase()).append("\n");
             listado.append(rs.getString("contenido")).append("\n");
-            listado.append("----------------------------------------------------------------------\n\n");
+            listado.append("----------------------------------------------------------------------\n\n"); // ese es un separador entre aviso y aviso
         }
         
         if (listado.length() == 0) {

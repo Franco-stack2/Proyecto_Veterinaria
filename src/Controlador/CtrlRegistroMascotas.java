@@ -76,7 +76,7 @@ public class CtrlRegistroMascotas implements ActionListener {
                 }
             } else {
            
-                JOptionPane.showMessageDialog(null, "El teléfono ingresado no pertenece a ningún dueño registrado.\nPor favor, dé de alta al dueño primero.", "Dueño no encontrado", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "El teléfono ingresado no pertenece a ningún dueño registrado.\nPor favor, ponga el numero de telefono.", "Dueño no encontrado", JOptionPane.ERROR_MESSAGE);
             }
         } 
         

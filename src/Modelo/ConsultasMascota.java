@@ -138,8 +138,8 @@ public class ConsultasMascota extends Conexion {
 }
     public int buscarIdDuenoPorTelefono(String telefono) {
    
-    String sql = "SELECT d.id_dueno FROM duenio d "
-               + "INNER JOIN usuario u ON d.id_usuario = u.id_usuario WHERE u.numTelefono = ?";
+    String sql = "SELECT duenio.id_dueno FROM duenio "
+           + "INNER JOIN usuario ON duenio.id_usuario = usuario.id_usuario WHERE usuario.numTelefono = ?";
     
     try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
         ps.setString(1, telefono);

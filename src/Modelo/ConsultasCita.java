@@ -44,7 +44,7 @@ public boolean registrar(Cita cita) {
     try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
         
         ps.setString(1, cita.getFecha());
-        ps.setInt(2, cita.getId_cita()); // Filtra estrictamente por la Llave Primaria
+        ps.setInt(2, cita.getId_cita()); 
         
         return ps.executeUpdate() > 0;
     } catch (SQLException e) {

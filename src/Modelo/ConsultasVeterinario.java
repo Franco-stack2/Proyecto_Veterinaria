@@ -26,39 +26,8 @@ public class ConsultasVeterinario extends Conexion {
         }
     }
 
-    public boolean buscar(Veterinario vet) {
-        String sql = "SELECT v.id_veterinario, v.especialidad, u.id_usuario, u.nombre, u.email, u.numTelefono, u.contrasena, u.TipoUsuario "
-        + "FROM veterinario v "
-        + "INNER JOIN usuario u "
-        + "ON v.id_usuario = u.id_usuario "
-        + "WHERE v.id_veterinario = ?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, vet.getId_veterinario());
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    vet.setId_veterinario(rs.getInt("id_veterinario"));
-                    vet.setId_usuario(rs.getInt("id_usuario")); 
-                    return true;
-                }
-            }
-            return false;
-        } catch (SQLException e) {
-            System.err.println("Error al buscar veterinario: " + e);
-            return false;
-        }
-    }
 
-    public boolean modificar(Veterinario vet) {
-        String sql = "UPDATE veterinario SET id_usuario=? WHERE id_veterinario=?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, vet.getId_usuario()); 
-            ps.setInt(2, vet.getId_veterinario());
-            return ps.executeUpdate() > 0;
-        } catch (SQLException e) {
-            System.err.println("Error al modificar veterinario: " + e);
-            return false;
-        }
-    }
+  
 
     public boolean eliminar(Veterinario vet) {
         String sql = "DELETE FROM veterinario WHERE id_veterinario=?";

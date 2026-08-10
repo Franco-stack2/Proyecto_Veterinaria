@@ -19,27 +19,7 @@ public class ConsultasDuenio extends Conexion {
         }
     }
 
-    public boolean buscar(Duenio duenio) {
-        String sql = "SELECT d.id_dueno, u.id_usuario, u.nombre, u.email, u.numTelefono, u.contrasena, u.TipoUsuario "
-        + "FROM duenio d "
-        + "INNER JOIN usuario u "
-        + "ON d.id_usuario = u.id_usuario "
-        + "WHERE d.id_dueno = ?";
-        try (Connection con = getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, duenio.getId_dueno());
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    duenio.setId_dueno(rs.getInt("id_dueno"));
-                    duenio.setId_usuario(rs.getInt("id_usuario"));
-                    return true;
-                }
-            }
-            return false;
-        } catch (SQLException e) {
-            System.err.println("Error al buscar duenio: " + e);
-            return false;
-        }
-    }
+  
 
     public boolean modificar(Duenio duenio) {
         String sql = "UPDATE duenio SET id_usuario=? WHERE id_dueno=?";

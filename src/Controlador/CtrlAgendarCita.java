@@ -84,7 +84,7 @@ public class CtrlAgendarCita implements ActionListener {
                 // Recuperamos el ID autoincremental más alto asignado por la base de datos
                 int numeroCitaGenerado = consultas.obtenerUltimoIdCita();
                 
-                // Lo desplegamos de inmediato en tu JTextField de la pantalla
+            
                 vista.getTxtNumerodeCita().setText(String.valueOf(numeroCitaGenerado));
                 
                 JOptionPane.showMessageDialog(null, "¡Cita agendada con éxito!\nNúmero de Cita generado: " + numeroCitaGenerado);
