@@ -45,12 +45,26 @@ public class CtrlInicioSesion implements ActionListener {
         if (e.getSource() == vista.getBtnIniciarSesion()) {
 
             modelo.setEmail(vista.getTxtEmail().getText());
-            modelo.setContrasena(
-                String.valueOf(vista.getTxtContrasena().getPassword())
-            );
+            modelo.setContrasena(String.valueOf(vista.getTxtContrasena().getPassword()));
+            
 
+            
+            
+            
+            
             if (consultas.iniciarSesion(modelo)) {
 
+                String nombreIngresado = vista.getTxtNombre().getText().trim();
+            
+            if (!nombreIngresado.equalsIgnoreCase(modelo.getNombre().trim())) {
+                JOptionPane.showMessageDialog(null, "El nombre de usuario no corresponde a la cuenta ingresada."); // validacion para el usuario
+                vista.getTxtNombre().requestFocus(); 
+                return; }
+                
+                
+                
+                
+                
                 JOptionPane.showMessageDialog(
                     null,
                     "Bienvenido " + modelo.getNombre()

@@ -39,7 +39,7 @@ public class CtrlExpedienteMedico implements ActionListener {
             
             if (vista.getTxtNombreMascota().getText().trim().isEmpty() 
                     || vista.getTxtNumEmergencia().getText().trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Por favor, complete los campos obligatorios (Nombre y Número de Emergencia).", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Por favor, complete los campos obligatorios ", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
