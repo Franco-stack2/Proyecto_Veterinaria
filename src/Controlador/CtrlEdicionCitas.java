@@ -102,7 +102,7 @@ public class CtrlEdicionCitas implements ActionListener {
     public void limpiar() {
         vista.getTxtIdCita().setText("");
         vista.getTxtFechaHora().setText("");
-        vista.getTxtIdCita().requestFocus(); // Devuelve el cursor al primer campo
+        vista.getTxtIdCita().requestFocus(); // Se limpian lo espacios ya llenos
     }
 }
     
