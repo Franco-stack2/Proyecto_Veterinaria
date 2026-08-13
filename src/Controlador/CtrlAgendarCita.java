@@ -81,7 +81,7 @@ public class CtrlAgendarCita implements ActionListener {
 
           
             if (consultas.registrar(modelo)) {
-                // Recuperamos el ID autoincremental más alto asignado por la base de datos
+                // Se recupera el ID que se tenia que es el ultimo para que nos suelte el ID que toca
                 int numeroCitaGenerado = consultas.obtenerUltimoIdCita();
                 
             
