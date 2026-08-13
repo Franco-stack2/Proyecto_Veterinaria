@@ -37,7 +37,7 @@ public class CtrlFormularioRegistro implements ActionListener {
     }
 
     public void limpiar() {
-       // Limpieza de campos utilizando métodos Getters que se hicieron en vista :/
+       // Limpieza de campos utilizando métodos Getters que se hicieron en vista 
         vista.getTxtNombre().setText("");
         vista.getTxtCorreoElectronico().setText("");
         vista.getTxtContrasena().setText("");
@@ -58,13 +58,13 @@ public class CtrlFormularioRegistro implements ActionListener {
                 return;
             }
 
-            // Mapeamos los datos de la interfaz al modelo utilizando métodos Getters
+            // se identifican los datos de la interfaz al modelo utilizando métodos Getters
             modelo.setNombre(vista.getTxtNombre().getText().trim());
             modelo.setEmail(vista.getTxtCorreoElectronico().getText().trim());
             modelo.setContrasena(vista.getTxtContrasena().getText().trim());
             modelo.setNumTelefono(vista.getTxtNumTelefonico().getText().trim());
             
-            // Obtenemos el rol seleccionado mediante el Getter del ComboBox
+            // se obtiene el rol seleccionado mediante el Getter del ComboBox
             String rolSeleccionado = vista.getCmbTipoUsuario().getSelectedItem().toString().trim();
             modelo.setTipoUsuario(rolSeleccionado);
 
