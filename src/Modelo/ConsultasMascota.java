@@ -100,7 +100,7 @@ public class ConsultasMascota extends Conexion {
         
         try (ResultSet rs = ps.executeQuery()) {
             if (rs.next()) {
-                // Restauramos tus setters originales que sí tenías bien vinculados en Java
+   
                 mas.setId_mascota(rs.getInt("id_mascota")); 
                 mas.setRazaMascota(rs.getString("razaMascota"));
                 mas.setVacunas(rs.getString("vacunas"));

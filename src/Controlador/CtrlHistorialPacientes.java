@@ -26,7 +26,7 @@ public class CtrlHistorialPacientes implements ActionListener {
         this.consultas = consultas;
         this.vista = vista;
 
-        // se le asigna accion al botón "Buscar" inferior derecho
+      
         this.vista.getBtnBuscar().addActionListener(this);
         
         // se asignan acciones a las opciones del menú lateral izquierdo
