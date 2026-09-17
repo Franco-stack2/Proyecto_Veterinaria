@@ -29,6 +29,8 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         btnRegistro = new javax.swing.JButton();
         btnExpedienteMedico = new javax.swing.JButton();
@@ -45,6 +47,19 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
         txtAlergias = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnAnadir = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -344,6 +359,8 @@ public class FrmExpedienteMedico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     public static javax.swing.JTextField txtAlergias;
     public static javax.swing.JTextField txtCondicionesPasadas;
     public static javax.swing.JTextField txtNombreMascota;
